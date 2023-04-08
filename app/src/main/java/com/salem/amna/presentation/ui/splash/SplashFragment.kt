@@ -7,11 +7,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.FragmentNavigatorExtras
-import androidx.navigation.fragment.NavHostFragment
 import com.salem.amna.R
 import com.salem.amna.data.repository.local.preference.LocalePreference
 import com.salem.amna.databinding.FragmentSplashBinding
-import com.salem.amna.presentation.ui.auth.LoginFragment
+import com.salem.amna.presentation.ui.auth.login.LoginFragment
 import com.salem.amna.presentation.ui.home.HomeFragment
 import com.salem.amna.util.replaceFragment
 import dagger.hilt.android.AndroidEntryPoint

@@ -1,8 +1,6 @@
 <resources>
     <string name="app_name">Amna</string>
     <string name="loading">Loading</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="home">Home</string>
     <string name="courses">Courses</string>
     <string name="earnings">Earnings</string>
@@ -10,4 +8,31 @@
     <string name="ok">Ok</string>
     <string name="cancel">Cancel</string>
     <string name="login_note_message">Please login first</string>
+    <string name="welcome_to_the_application">Welcome to Amna Application</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
+    <string name="login_to_continue">Login to continue</string>
+    <string name="forget_password">forget password?</string>
+    <string name="dont_have_account">don\'t have account?<font color="#41AD4A"> register now</font></string>
+    <string name="create_new_account">Create new account</string>
+    <string name="complete_your_data">Complete this informations to create new account</string>
+    <string name="personal_name">Personal name</string>
+    <string name="email_address">Email Address</string>
+    <string name="register">Register</string>
+    <string name="already_have_account">Already have account?<font color="#41AD4A"> Login</font></string>
+    <string name="choose_language">Please choose language</string>
+    <string name="ar" translatable="false">ع</string>
+    <string name="arabic_lang">اللغة العربية</string>
+    <string name="en">E</string>
+    <string name="english_lang">English</string>
+    <string name="continue_txt">Continue</string>
+    <string name="choose_account_type">Please choose account type</string>
+    <string name="home_account">Home Account</string>
+    <string name="replace_for_gifts">Replace your remnants for poins or gifts</string>
+    <string name="work_account">Work Account</string>
+    <string name="replace_for_money">Replace your remnants for money</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="skip">Skip</string>
 </resources>

@@ -3,9 +3,13 @@
 
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="backgroundColor">#F1F1F1</color>
+    <color name="backgroundColor">#FAFAFA</color>
     <color name="darkGray">#6A6E83</color>
+    <color name="lightGray1">#A8B1CE</color>
+    <color name="lightGray2">#F2F5FF</color>
     <color name="mainGreen">#41AD4A</color>
+    <color name="orange">#F8AC40</color>
+    <color name="lightOrange">#FAEAD3</color>
 
     <color name="transparent">#00000000</color>
 

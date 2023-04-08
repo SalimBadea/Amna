@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Amna</string>
+    <string name="loading">جاري التحميل</string>
+    <string name="home">الرئيسية</string>
+    <string name="courses">دورات</string>
+    <string name="earnings">ارباحي</string>
+    <string name="profile">حسابي</string>
+    <string name="ok">تم</string>
+    <string name="cancel">الغاء</string>
+    <string name="login_note_message">يرجي تسجيل الدخول اولاً</string>
+    <string name="welcome_to_the_application">اهلاً بيك ف آمنة</string>
+    <string name="phone_number">رقم الهاتف</string>
+    <string name="login">تسجيل الدخول</string>
+    <string name="password">كلمة المرور</string>
+    <string name="login_to_continue">سجل دخول للمتابعة</string>
+    <string name="forget_password">نسيت كلمة المرور ؟</string>
+    <string name="dont_have_account">ليس لديك حساب ؟ <font color="#41AD4A"> سجل الآن</font></string>
+    <string name="create_new_account">تسجيل حساب جديد</string>
+    <string name="complete_your_data">سجل البيانات المطلوبة منك عشان تقدر تنشئ حساب جديد عندنا</string>
+    <string name="personal_name">اسمك الشخصي</string>
+    <string name="email_address">البريد الالكتروني</string>
+    <string name="register">انشاء حساب</string>
+    <string name="already_have_account">لديك حساب يالفعل؟<font color="#41AD4A"> سجل دخول</font></string>
+    <string name="arabic_lang">اللغة العربية</string>
+    <string name="en">E</string>
+    <string name="english_lang">English</string>
+    <string name="choose_language">برجاء تحديد اللغة المناسبة لك</string>
+    <string name="continue_txt">المتابعة</string>
+    <string name="choose_account_type">اختار نوع الحساب الخاص بيك قبل عملية الدخول</string>
+    <string name="home_account">حساب منزلي</string>
+    <string name="replace_for_gifts">جمع المخلفات الخاصة بيك واستبدلها بنقط او قسيمة</string>
+    <string name="replace_for_money">جمع المخلفات الخاصة بيك واستبدلها بمقابل مادي</string>
+    <string name="work_account">حساب اعمال</string>
+</resources>
