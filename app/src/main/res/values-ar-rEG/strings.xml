@@ -32,4 +32,15 @@
     <string name="replace_for_gifts">جمع المخلفات الخاصة بيك واستبدلها بنقط او قسيمة</string>
     <string name="replace_for_money">جمع المخلفات الخاصة بيك واستبدلها بمقابل مادي</string>
     <string name="work_account">حساب اعمال</string>
+    <string name="skip">تخطي</string>
+    <string name="next">التالي</string>
+    <string name="logout">تسجيل الخروج</string>
+    <string name="about_app">عن التطبيق</string>
+    <string name="privacy_policy">سياسة الخصوصية</string>
+    <string name="invite_friend">دعوة صديق</string>
+    <string name="contact_us">تواصل معنا</string>
+    <string name="volunteering">التطوع</string>
+    <string name="language">اللغة</string>
+    <string name="change_password">تغيير كلمة المرور</string>
+    <string name="edit_profile">تعديل الملف الشخصي</string>
 </resources>

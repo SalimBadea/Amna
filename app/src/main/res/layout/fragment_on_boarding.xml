@@ -24,7 +24,7 @@
         android:layout_marginEnd="@dimen/_16sdp"
         android:layout_marginTop="@dimen/_16sdp"
         android:background="@drawable/bg_primery_btn"
-        android:text="@string/continue_txt"
+        android:text="@string/next"
         android:textSize="@dimen/_12ssp"
         android:textAllCaps="false"
         app:backgroundTint="@color/mainGreen"

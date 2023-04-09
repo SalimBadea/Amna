@@ -32,7 +32,21 @@
     <string name="replace_for_gifts">Replace your remnants for poins or gifts</string>
     <string name="work_account">Work Account</string>
     <string name="replace_for_money">Replace your remnants for money</string>
+    <string name="skip">Skip</string>
+    <string name="next">Next</string>
+    <string name="logout">Logout</string>
+    <string name="about_app">About App</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="invite_friend">Invite Friend</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="volunteering">Volunteering</string>
+    <string name="language">Language</string>
+    <string name="change_password">Change Password</string>
+    <string name="edit_profile">Edit Profile</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="skip">Skip</string>
+    <string name="user_name">User Name</string>
+    <string name="notes">Notes</string>
+    <string name="send">Send</string>
+    <string name="call">Call Us</string>
 </resources>

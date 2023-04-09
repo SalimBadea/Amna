@@ -5,7 +5,7 @@
         android:angle="270"
         android:endColor="#FFF"
         />
-    <corners android:topLeftRadius="@dimen/_24sdp"
-        android:topRightRadius="@dimen/_24sdp"/>
+    <corners android:topLeftRadius="@dimen/_16sdp"
+        android:topRightRadius="@dimen/_16sdp"/>
 
 </shape>
