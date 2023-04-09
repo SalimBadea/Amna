@@ -7,6 +7,9 @@ object Constants {
     const val ENGLISH = "en"
     const val ARABIC = "ar"
 
+    const val PREFERENCES_DB: String = "PreferencesDb"
+
+
     // api links part
 //const val BASE_URL = "https://safriapp.com/"
     const val LANGUAGE_HEADER_KEY = "Accept-Language"

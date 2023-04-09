@@ -8,7 +8,9 @@ import android.view.ViewGroup
 import com.salem.amna.R
 import com.salem.amna.base.BaseFragment
 import com.salem.amna.databinding.FragmentContactUsBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class ContactUsFragment : BaseFragment() {
 
     private val binding: FragmentContactUsBinding by lazy {

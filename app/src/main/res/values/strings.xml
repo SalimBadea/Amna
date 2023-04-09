@@ -49,4 +49,16 @@
     <string name="notes">Notes</string>
     <string name="send">Send</string>
     <string name="call">Call Us</string>
+    <string name="my_personal_data">My personal data</string>
+    <string name="save_changes">Save Changes</string>
+    <string name="forget_password_title">Forget Password</string>
+    <string name="enter_registered_phone_number">Please, enter the phone number registered with us to receive the activation code</string>
+    <string name="address">Address</string>
+    <string name="title_1">Don\'t know where to put your electronic waste?</string>
+    <string name="description_1">There is a long-established fact that the readable content of a page will not distract the reader</string>
+    <string name="title_2">We will help you put it together</string>
+    <string name="description_2">There is a long-established fact that the readable content of a page will not distract the reader</string>
+    <string name="title_3">Hand it over and win coupons and many more products</string>
+    <string name="description_3">There is a long-established fact that the readable content of a page will not distract the reader</string>
+
 </resources>

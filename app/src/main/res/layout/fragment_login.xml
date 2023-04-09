@@ -142,6 +142,7 @@
                 android:text="@string/login"
                 android:textSize="@dimen/_12ssp"
                 android:textAllCaps="false"
+                android:padding="@dimen/_6sdp"
                 app:backgroundTint="@color/mainGreen"
                 app:fontFamily="@font/cairo_regular"
                 app:layout_constraintEnd_toEndOf="parent"

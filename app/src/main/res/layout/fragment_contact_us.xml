@@ -61,7 +61,7 @@
         app:layout_constraintTop_toBottomOf="@id/tvNameTitle" />
 
     <TextView
-        android:id="@+id/tvEmailTitle"
+        android:id="@+id/tvPhoneTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_16sdp"
@@ -88,8 +88,8 @@
         android:textColor="@color/black"
         android:textSize="@dimen/_14ssp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@id/tvEmailTitle"
-        app:layout_constraintTop_toBottomOf="@id/tvEmailTitle" />
+        app:layout_constraintStart_toStartOf="@id/tvPhoneTitle"
+        app:layout_constraintTop_toBottomOf="@id/tvPhoneTitle" />
 
     <TextView
         android:id="@+id/tvNotesTitle"
@@ -121,7 +121,6 @@
         app:layout_constraintStart_toStartOf="@id/tvNotesTitle"
         app:layout_constraintTop_toBottomOf="@id/tvNotesTitle" />
 
-
     <com.google.android.material.button.MaterialButton
         android:id="@+id/send_btn"
         android:layout_width="0dp"
@@ -133,6 +132,7 @@
         android:text="@string/send"
         android:textSize="@dimen/_12ssp"
         android:textAllCaps="false"
+        android:padding="@dimen/_6sdp"
         app:backgroundTint="@color/mainGreen"
         app:fontFamily="@font/cairo_regular"
         app:layout_constraintEnd_toEndOf="parent"
@@ -151,6 +151,7 @@
         android:textSize="@dimen/_12ssp"
         android:textAllCaps="false"
         android:textColor="@color/mainGreen"
+        android:padding="@dimen/_6sdp"
         app:icon="@drawable/ic_call_calling"
         app:iconTint="@color/mainGreen"
         app:iconGravity="textStart"
@@ -161,6 +162,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/send_btn" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

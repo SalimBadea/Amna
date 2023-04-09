@@ -8,8 +8,9 @@ import android.view.ViewGroup
 import com.salem.amna.R
 import com.salem.amna.base.BaseFragment
 import com.salem.amna.databinding.FragmentHomeBinding
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class HomeFragment : BaseFragment() {
 
     private val binding: FragmentHomeBinding by lazy {

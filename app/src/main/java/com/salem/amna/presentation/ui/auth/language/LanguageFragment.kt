@@ -8,7 +8,9 @@ import android.view.ViewGroup
 import com.salem.amna.R
 import com.salem.amna.base.BaseFragment
 import com.salem.amna.databinding.FragmentLanguageBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class LanguageFragment : BaseFragment() {
 
     private val binding: FragmentLanguageBinding by lazy {

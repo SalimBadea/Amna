@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".presentation.ui.my_account.edit_profile.EditProfileFragment">
+    tools:context=".presentation.ui.my_account.volunteering.VolunteeringFragment">
 
     <ImageView
         android:id="@+id/backIv"
@@ -21,43 +21,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/cairo_semi_bold"
-        android:text="@string/my_personal_data"
+        android:text="@string/volunteering"
         android:textColor="@color/black"
         android:textSize="@dimen/_16ssp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/backIv" />
-
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/profileImage"
-        android:layout_width="@dimen/_90sdp"
-        android:layout_height="@dimen/_90sdp"
-        android:background="@color/white"
-        android:layout_marginTop="@dimen/_32sdp"
-        android:scaleType="fitXY"
-        android:translationZ="@dimen/_1sdp"
-        app:contentPadding="@dimen/_4sdp"
-        app:layout_constraintDimensionRatio="h,1:1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvTitle"
-        app:shapeAppearance="@style/ImageRoundedStyle"
-        app:srcCompat="@drawable/logo"
-        tools:srcCompat="@drawable/logo" />
-
-    <ImageButton
-        android:id="@+id/cameraButton"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:background="@drawable/circle_background"
-        android:elevation="@dimen/_2sdp"
-        android:src="@drawable/ic_edit"
-        app:layout_constraintBottom_toBottomOf="@+id/profileImage"
-        app:layout_constraintEnd_toEndOf="@+id/profileImage"
-        app:layout_constraintStart_toEndOf="@+id/profileImage"
-        app:layout_constraintTop_toBottomOf="@+id/profileImage"
-        app:tint="@color/white"
-        tools:ignore="TouchTargetSizeCheck" />
 
 
     <TextView
@@ -65,13 +34,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_16sdp"
-        android:layout_marginTop="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_24sdp"
         android:fontFamily="@font/cairo_regular"
         android:text="@string/user_name"
         android:textColor="@color/darkGray"
         android:textSize="@dimen/_12ssp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cameraButton" />
+        app:layout_constraintTop_toBottomOf="@id/tvTitle" />
 
     <EditText
         android:id="@+id/etName"
@@ -152,6 +121,36 @@
         app:layout_constraintStart_toStartOf="@id/tvEmailTitle"
         app:layout_constraintTop_toBottomOf="@id/tvEmailTitle" />
 
+    <TextView
+        android:id="@+id/tvAddressTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:fontFamily="@font/cairo_regular"
+        android:text="@string/address"
+        android:textColor="@color/darkGray"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etEmail" />
+
+    <EditText
+        android:id="@+id/etAddress"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:layout_marginEnd="@dimen/_16sdp"
+        android:background="@drawable/bg_et_8_corner_stroke"
+        android:fontFamily="@font/cairo_regular"
+        android:inputType="text"
+        android:maxLines="3"
+        android:padding="@dimen/_8sdp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_14ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/tvAddressTitle"
+        app:layout_constraintTop_toBottomOf="@id/tvAddressTitle" />
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/send_btn"
         android:layout_width="0dp"
@@ -160,13 +159,14 @@
         android:layout_marginEnd="@dimen/_16sdp"
         android:layout_marginTop="@dimen/_32sdp"
         android:background="@drawable/bg_primery_btn"
-        android:text="@string/save_changes"
+        android:text="@string/send"
         android:textSize="@dimen/_12ssp"
         android:textAllCaps="false"
+        android:padding="@dimen/_6sdp"
         app:backgroundTint="@color/mainGreen"
         app:fontFamily="@font/cairo_regular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/etAddress" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

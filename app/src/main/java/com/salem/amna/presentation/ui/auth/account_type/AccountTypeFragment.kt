@@ -7,19 +7,18 @@ import android.view.View
 import android.view.ViewGroup
 import com.salem.amna.R
 import com.salem.amna.base.BaseFragment
+import com.salem.amna.databinding.FragmentAccountTypeBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class AccountTypeFragment : BaseFragment() {
 
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-
-        }
+    private val binding: FragmentAccountTypeBinding by lazy {
+        FragmentAccountTypeBinding.inflate(layoutInflater)
     }
 
     override fun getRootView(): View {
-        TODO("Not yet implemented")
+        return binding.root
     }
 
     override fun initVar() {

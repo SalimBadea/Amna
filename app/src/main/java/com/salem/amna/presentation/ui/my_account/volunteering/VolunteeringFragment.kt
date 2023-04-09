@@ -1,19 +1,20 @@
-package com.salem.amna.presentation.ui.auth.login
+package com.salem.amna.presentation.ui.my_account.volunteering
 
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.salem.amna.R
 import com.salem.amna.base.BaseFragment
-import com.salem.amna.databinding.FragmentLoginBinding
+import com.salem.amna.databinding.FragmentVolunteeringBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class LoginFragment : BaseFragment() {
+class VolunteeringFragment : BaseFragment() {
 
-    private val binding: FragmentLoginBinding by lazy {
-        FragmentLoginBinding.inflate(layoutInflater)
+    private val binding: FragmentVolunteeringBinding by lazy {
+        FragmentVolunteeringBinding.inflate(layoutInflater)
     }
 
     override fun getRootView(): View {
@@ -36,12 +37,9 @@ class LoginFragment : BaseFragment() {
     }
 
     companion object {
-
         @JvmStatic
-        fun newInstance() =
-            LoginFragment().apply {
+        fun newInstance() = VolunteeringFragment().apply {
                 arguments = Bundle().apply {
-
                 }
             }
     }

@@ -12,6 +12,7 @@ import com.salem.amna.data.repository.local.preference.LocalePreference
 import com.salem.amna.databinding.FragmentSplashBinding
 import com.salem.amna.presentation.ui.auth.login.LoginFragment
 import com.salem.amna.presentation.ui.home.HomeFragment
+import com.salem.amna.presentation.ui.on_boarding.OnBoardingFragment
 import com.salem.amna.util.replaceFragment
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
@@ -51,7 +52,7 @@ class SplashFragment : Fragment() {
                 replaceFragment(HomeFragment(), R.id.fragmentContainer, true)
             } else {
                 activity?.finishAffinity()
-                replaceFragment(LoginFragment(), R.id.fragmentContainer, true)
+                replaceFragment(OnBoardingFragment(), R.id.fragmentContainer, true)
             }
         }
     }

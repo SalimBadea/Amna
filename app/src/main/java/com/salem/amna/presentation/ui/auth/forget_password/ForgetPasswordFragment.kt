@@ -1,19 +1,20 @@
-package com.salem.amna.presentation.ui.auth.login
+package com.salem.amna.presentation.ui.auth.forget_password
 
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.salem.amna.R
 import com.salem.amna.base.BaseFragment
-import com.salem.amna.databinding.FragmentLoginBinding
+import com.salem.amna.databinding.FragmentForgetPasswordBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class LoginFragment : BaseFragment() {
+class ForgetPasswordFragment : BaseFragment() {
 
-    private val binding: FragmentLoginBinding by lazy {
-        FragmentLoginBinding.inflate(layoutInflater)
+    private val binding: FragmentForgetPasswordBinding by lazy {
+        FragmentForgetPasswordBinding.inflate(layoutInflater)
     }
 
     override fun getRootView(): View {
@@ -36,12 +37,9 @@ class LoginFragment : BaseFragment() {
     }
 
     companion object {
-
         @JvmStatic
-        fun newInstance() =
-            LoginFragment().apply {
+        fun newInstance() = ForgetPasswordFragment().apply {
                 arguments = Bundle().apply {
-
                 }
             }
     }
