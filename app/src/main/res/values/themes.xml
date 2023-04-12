@@ -19,6 +19,10 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="BottomNavigationTheme">
+        <item name="backgroundColor">@color/backgroundColor</item>
+    </style>
+
     <style name="Theme.Splash" parent="Theme.Amna">
         <item name="android:windowBackground">@color/white</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
@@ -30,6 +34,13 @@
     <style name="ImageRoundedStyle" parent="">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="CardViewTheme" parent="Widget.MaterialComponents.CardView">
+        <item name="android:elevation">@dimen/_8sdp</item>
+        <item name="cardElevation">@dimen/_4sdp</item>
+        <item name="cardCornerRadius">@dimen/_16sdp</item>
+        <item name="android:backgroundTint">@color/white</item>
     </style>
 
 </resources>

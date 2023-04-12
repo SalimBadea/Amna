@@ -43,4 +43,32 @@
     <string name="language">اللغة</string>
     <string name="change_password">تغيير كلمة المرور</string>
     <string name="edit_profile">تعديل الملف الشخصي</string>
+    <string name="enable_gps">قم بتمكين GPS أو أي خدمة موقع أخرى للعثور على الموقع الحالي. انقر فوق "موافق" للانتقال إلى إعدادات خدمات الموقع للسماح لك بذلك.</string>
+    <string name="user_name">اسم المستخدم</string>
+    <string name="notes">ملاحظات</string>
+    <string name="send">ارسال</string>
+    <string name="call">اتصل بنا</string>
+    <string name="my_personal_data">معلوماتي الشخصية</string>
+    <string name="save_changes">حفظ التغييرات</string>
+    <string name="forget_password_title">نسيت كلمة المرور</string>
+    <string name="enter_registered_phone_number">يرجي ادخال رقم الموبايل المسجل لدينا لارسال كود التفعيل عليه</string>
+    <string name="address">العنوان</string>
+    <string name="title_1">لا تعلم اين تضع مخلفاتك الالكترونية؟</string>
+    <string name="title_2">سنساعدك في تجميعها</string>
+    <string name="title_3">سلمها واربح كوبونات والعديد من المنتجات</string>
+    <string name="enter_your_new_password">يرجي ادخال كلمة مرور جديدة لاستكمال العملية</string>
+    <string name="new_password">كلمة المرور الجديدة</string>
+    <string name="confirm_new_password">تأكيد كلمة المرور الجديدة</string>
+    <string name="create_new_password">انشاء كلمة مرور جديدة</string>
+    <string name="please_enter_valid_code">يرجي ادخال كود صحيح</string>
+    <string name="the_time_is_not_over_yet">الوقت لم ينتهي بعد</string>
+    <string name="verification_code">كود التفعيل</string>
+    <string name="verification_code_page_info">تم ارسال الكود ع رقم</string>
+    <string name="resend">لم تستلم كود التفعيل؟ <font color="#41AD4A"> اعادة ارسال </font></string>
+    <string name="confirm">تأكيد</string>
+    <string name="change_your_password">قم بإنشاء كلمة السر الجديدة وحاول استخدام الرموز والأرقام لتقوية كلمة المرور والأبتعاد عن كلمات المرور القديمة</string>
+    <string name="change_password_title">تغيير كلمة المرور</string>
+    <string name="old_password">كلمة المرور القديمة</string>
+
+
 </resources>

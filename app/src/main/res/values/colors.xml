@@ -12,6 +12,6 @@
     <color name="lightOrange">#FAEAD3</color>
 
     <color name="transparent">#00000000</color>
-
+    <color name="timer_background">#F1F1F1</color>
 
 </resources>

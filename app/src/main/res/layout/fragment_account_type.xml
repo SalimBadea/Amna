@@ -70,7 +70,6 @@
             android:background="@drawable/bg_selected_category"
             android:padding="@dimen/_8sdp"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:drawableStartCompat="@drawable/ic_home"
             app:drawableTint="@color/white" />
@@ -101,13 +100,14 @@
 
         <TextView
             android:id="@+id/home_content"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_8sdp"
             android:text="@string/replace_for_gifts"
             android:textColor="@color/darkGray"
             android:textSize="@dimen/_12ssp"
             app:fontFamily="@font/cairo_regular"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/home_title"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@id/homeIcon" />
@@ -138,7 +138,6 @@
             android:background="@drawable/bg_unselected_category"
             android:padding="@dimen/_8sdp"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:drawableStartCompat="@drawable/ic_work"
             app:drawableTint="@color/darkGray" />
@@ -157,13 +156,14 @@
 
         <TextView
             android:id="@+id/work_content"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_8sdp"
             android:text="@string/replace_for_money"
             android:textColor="@color/darkGray"
             android:textSize="@dimen/_12ssp"
             app:fontFamily="@font/cairo_regular"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/work_title"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@id/workIcon" />

@@ -20,7 +20,7 @@
         android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/cairo_semi_bold"
+        android:fontFamily="@font/cairo_bold"
         android:text="@string/volunteering"
         android:textColor="@color/black"
         android:textSize="@dimen/_16ssp"
