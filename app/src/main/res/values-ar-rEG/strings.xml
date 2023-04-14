@@ -69,6 +69,11 @@
     <string name="change_your_password">قم بإنشاء كلمة السر الجديدة وحاول استخدام الرموز والأرقام لتقوية كلمة المرور والأبتعاد عن كلمات المرور القديمة</string>
     <string name="change_password_title">تغيير كلمة المرور</string>
     <string name="old_password">كلمة المرور القديمة</string>
-
+    <string name="welcome_back">مرحباً بعودتك</string>
+    <string name="watch">مشاهدة</string>
+    <string name="register_for_the_course">التسجيل ف الدورة</string>
+    <string name="categories">الأقسام</string>
+    <string name="purchase_vouchers">قسائم شراء</string>
+    <string name="products">منتجات</string>
 
 </resources>

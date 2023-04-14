@@ -36,6 +36,11 @@
         <item name="cornerSize">50%</item>
     </style>
 
+    <style name="ImageRoundedStyle8" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">8%</item>
+    </style>
+
     <style name="CardViewTheme" parent="Widget.MaterialComponents.CardView">
         <item name="android:elevation">@dimen/_8sdp</item>
         <item name="cardElevation">@dimen/_4sdp</item>

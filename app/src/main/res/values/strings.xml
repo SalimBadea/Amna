@@ -73,8 +73,11 @@
     <string name="change_your_password">Create a new password and try to use symbols and numbers to strengthen the password and stay away from old passwords</string>
     <string name="old_password">Old Password</string>
     <string name="welcome_back">Welcome Back</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="watch">Watch</string>
+    <string name="register_for_the_course">Register in course</string>
+    <string name="categories">Categories</string>
+    <string name="purchase_vouchers">Purchase vouchers</string>
+    <string name="products">Products</string>
 
 
 </resources>

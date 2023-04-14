@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:cardElevation="@dimen/_8sdp"
+    app:cardCornerRadius="@dimen/_8sdp"
+    android:layout_margin="@dimen/_6sdp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivCourse"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_100sdp"
+            android:src="@drawable/course_img"
+            android:layout_margin="@dimen/_8sdp"
+            app:shapeAppearance="@style/ImageRoundedStyle8"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:scaleType="fitXY"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/cairo_regular"
+            android:textSize="@dimen/_10ssp"
+            android:padding="@dimen/_6sdp"
+            android:textColor="@color/black"
+            tools:text="دورة مكثفة في تعلم كيفية المحافظة علي البيئة من خطورة المخلفات الالكترونية وكيفية الاستفادة منها بشكل صحيح"
+            app:layout_constraintTop_toBottomOf="@id/ivCourse"
+            app:layout_constraintStart_toStartOf="@id/ivCourse"
+            app:layout_constraintEnd_toEndOf="@id/ivCourse"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/subscribeBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:background="@drawable/bg_primery_btn"
+            android:text="@string/register_for_the_course"
+            android:textSize="@dimen/_12ssp"
+            android:textAllCaps="false"
+            android:padding="@dimen/_6sdp"
+            app:backgroundTint="@color/mainGreen"
+            app:fontFamily="@font/cairo_regular"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/watchBtn"
+            app:layout_constraintStart_toStartOf="@id/ivCourse"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/watchBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:background="@drawable/bg_et_8_corner_stroke_green"
+            android:text="@string/watch"
+            android:textSize="@dimen/_12ssp"
+            android:textAllCaps="false"
+            android:textColor="@color/mainGreen"
+            android:padding="@dimen/_6sdp"
+            app:icon="@drawable/ic_play"
+            app:iconTint="@color/mainGreen"
+            app:iconGravity="textStart"
+            app:iconPadding="@dimen/_8sdp"
+            app:backgroundTint="@null"
+            android:backgroundTint="@null"
+            app:fontFamily="@font/cairo_regular"
+            app:layout_constraintBottom_toBottomOf="@id/subscribeBtn"
+            app:layout_constraintEnd_toEndOf="@id/ivCourse"
+            app:layout_constraintStart_toEndOf="@id/subscribeBtn"
+            app:layout_constraintTop_toTopOf="@id/subscribeBtn" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
