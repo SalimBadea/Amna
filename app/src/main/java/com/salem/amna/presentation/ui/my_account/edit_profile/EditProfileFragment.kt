@@ -25,6 +25,9 @@ class EditProfileFragment : BaseFragment() {
     }
 
     override fun initVar() {
+        binding.backIv.setOnClickListener {
+            baseActivity.onBackPressed()
+        }
     }
 
     override fun onEvent() {

@@ -10,6 +10,10 @@ import com.salem.amna.R
 import com.salem.amna.base.BaseActivity
 import com.salem.amna.data.repository.local.preference.LocalePreference
 import com.salem.amna.databinding.ActivityMainBinding
+import com.salem.amna.presentation.ui.courses.CoursesFragment
+import com.salem.amna.presentation.ui.earnings.MyEarningsFragment
+import com.salem.amna.presentation.ui.home.HomeFragment
+import com.salem.amna.presentation.ui.my_account.MyAccountFragment
 import com.salem.amna.util.replaceFragment
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.*
@@ -45,12 +49,12 @@ class MainActivity : BaseActivity() {
         when (navPosition) {
 
             4 -> {
-//                replaceFragment(MoreFragment(), R.id.fragmentContainer, false)
+                replaceFragment(MyAccountFragment(), R.id.fragmentContainer, false)
                 openFragmentByPosition()
             }
 
             3 -> {
-//                replaceFragment(OffersFragment(), R.id.fragmentContainer, false)
+                replaceFragment(MyEarningsFragment(), R.id.fragmentContainer, false)
                 openFragmentByPosition()
             }
 
@@ -59,12 +63,12 @@ class MainActivity : BaseActivity() {
             }
 
             1 -> {
-//                replaceFragment(CartFragment(), R.id.fragmentContainer, false)
+                replaceFragment(CoursesFragment(), R.id.fragmentContainer, false)
                 openFragmentByPosition()
             }
 
             else -> {
-//                replaceFragment(HomeFragment(), R.id.fragmentContainer, false)
+                replaceFragment(HomeFragment(), R.id.fragmentContainer, false)
                 openFragmentByPosition()
             }
         }
@@ -82,11 +86,11 @@ class MainActivity : BaseActivity() {
             when (item.itemId) {
                 R.id.navigation_home -> {
                     navPosition = 0
-//                    replaceFragment(HomeFragment(), R.id.fragmentContainer, false)
+                    replaceFragment(HomeFragment(), R.id.fragmentContainer, false)
                 }
                 R.id.navigation_courses -> {
                     navPosition = 1
-//                    replaceFragment(CartFragment(), R.id.fragmentContainer, true)
+                    replaceFragment(CoursesFragment(), R.id.fragmentContainer, true)
                 }
                 R.id.navigation_add -> {
                     GlobalScope.launch {
@@ -99,20 +103,20 @@ class MainActivity : BaseActivity() {
 
                 R.id.navigation_earnings -> {
                     navPosition = 3
-//                    replaceFragment(OffersFragment(), R.id.fragmentContainer, false)
+                    replaceFragment(MyEarningsFragment(), R.id.fragmentContainer, false)
                 }
                 R.id.navigation_profile -> {
                     navPosition = 4
-//                    replaceFragment(MoreFragment(), R.id.fragmentContainer, false)
+                    replaceFragment(MyAccountFragment(), R.id.fragmentContainer, false)
                 }
             }
             true
         }
 
         binding.btnAddCustom.setOnClickListener {
-            if (token.isNullOrEmpty()) {
-                showToast(getString(R.string.login_note_message))
-            } else
+//            if (token.isNullOrEmpty()) {
+//                showToast(getString(R.string.login_note_message))
+//            } else
                 GlobalScope.launch {
                     withContext(Dispatchers.Default) {
                         if (animate())
@@ -140,6 +144,7 @@ class MainActivity : BaseActivity() {
         val animation2: Animation =
             AnimationUtils.loadAnimation(applicationContext, R.anim.bottom_to_top)
         binding.btnAddCustom.startAnimation(animation2)
+        binding.btnAdd.startAnimation(animation2)
         return true
     }
 

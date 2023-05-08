@@ -7,6 +7,17 @@
     tools:context=".presentation.ui.auth.language.LanguageFragment">
 
     <ImageView
+        android:id="@+id/backIv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_12sdp"
+        android:padding="@dimen/_4sdp"
+        android:src="@drawable/ic_arrow_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
         android:id="@+id/loginLogo"
         android:layout_width="@dimen/_100sdp"
         android:layout_height="@dimen/_100sdp"

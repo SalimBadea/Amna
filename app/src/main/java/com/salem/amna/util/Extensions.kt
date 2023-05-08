@@ -1,6 +1,7 @@
 package com.salem.amna.util
 
 import android.content.Context
+import android.content.Intent
 import android.content.res.ColorStateList
 import android.content.res.Resources
 import android.graphics.drawable.Drawable
@@ -9,6 +10,7 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.annotation.ColorRes
 import androidx.annotation.IdRes
+import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.widget.ImageViewCompat
@@ -16,6 +18,7 @@ import androidx.fragment.app.Fragment
 import coil.load
 import coil.transform.RoundedCornersTransformation
 import com.google.gson.Gson
+import com.salem.amna.R
 import com.salem.amna.data.models.ErrorResponse
 
 fun Context.getStringByName(name: String): String {
@@ -95,6 +98,24 @@ fun ImageView.setTint(@ColorRes color: Int?) {
             ColorStateList.valueOf(ContextCompat.getColor(context, color))
         )
     }
+}
+
+
+
+fun share(context: Context, @StringRes shareBody: Int) {
+    val sharingIntent = Intent(Intent.ACTION_SEND)
+    sharingIntent.type = "text/plain"
+    sharingIntent.putExtra(
+        Intent.EXTRA_SUBJECT, context.getString(R.string.app_name)
+    )
+    sharingIntent.putExtra(
+        Intent.EXTRA_TEXT,
+        String.format(
+            context.getString(shareBody),
+            context.getString(R.string.share_link) + context.packageName
+        )
+    )
+    context.startActivity(Intent.createChooser(sharingIntent, "Share via"))
 }
 
 fun ImageView.loadImageFromInternet(

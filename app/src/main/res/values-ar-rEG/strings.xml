@@ -75,5 +75,16 @@
     <string name="categories">الأقسام</string>
     <string name="purchase_vouchers">قسائم شراء</string>
     <string name="products">منتجات</string>
+    <string name="my_orders">طلباتي</string>
+    <string name="all">الكل</string>
+    <string name="pending">قيد الانتظار</string>
+    <string name="accepted">"مقبولة "</string>
+    <string name="finished">منتهية</string>
+    <string name="rejected">مرفوضة</string>
+    <string name="last_orders">اخر الطلبات</string>
+    <string name="accept_order">قبول الطلب</string>
+    <string name="coupon">القسيمة</string>
+    <string name="order_delivery">تسليم الطلب</string>
+    <string name="past_orders">الطلبات السابقة</string>
 
 </resources>

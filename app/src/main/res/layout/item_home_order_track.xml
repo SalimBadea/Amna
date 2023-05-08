@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/ivTracking"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_radio_checked"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginStart="@dimen/_12sdp"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:layout_width="@dimen/_60sdp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/view_background_green"
+        app:layout_constraintTop_toTopOf="@id/ivTracking"
+        app:layout_constraintBottom_toBottomOf="@id/ivTracking"
+        app:layout_constraintStart_toEndOf="@id/ivTracking"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvPending"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_4sdp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/bg_light_gray"
+        app:fontFamily="@font/cairo_regular"
+        android:text="@string/pending"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_11ssp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivTracking" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

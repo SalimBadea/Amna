@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".presentation.ui.earnings.MyEarningsFragment">
+    tools:context=".presentation.ui.earnings.NotificationsFragment">
 
     <include
         android:id="@+id/toolbar"
@@ -28,8 +28,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="@string/purchase_vouchers"
-            android:background="@drawable/bg_primery_btn"
-            android:backgroundTint="@color/orange"
+            android:background="@drawable/bg_orange"
             android:gravity="center"
             android:textColor="@color/black"
             android:fontFamily="@font/cairo_semi_bold"
@@ -43,8 +42,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="@string/products"
-            android:background="@drawable/bg_primery_btn"
-            android:backgroundTint="@color/white"
+            android:background="@drawable/bg_white"
             android:gravity="center"
             android:textColor="@color/darkGray"
             android:fontFamily="@font/cairo_semi_bold"

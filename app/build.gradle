@@ -108,4 +108,7 @@ dependencies {
     //lingver manage app language
     implementation "com.github.YarikSOffice:lingver:1.2.1"
 
+    //Picasso
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
 }

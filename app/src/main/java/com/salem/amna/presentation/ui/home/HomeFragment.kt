@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import com.salem.amna.R
 import com.salem.amna.base.BaseFragment
 import com.salem.amna.databinding.FragmentHomeBinding
+import com.salem.amna.presentation.ui.earnings.NotificationsFragment
+import com.salem.amna.util.replaceFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -25,6 +27,9 @@ class HomeFragment : BaseFragment() {
     }
 
     override fun onEvent() {
+        binding.toolbar.notificationsImage.setOnClickListener{
+            replaceFragment(NotificationsFragment(), R.id.fragmentContainer, true)
+        }
     }
 
     override fun render() {

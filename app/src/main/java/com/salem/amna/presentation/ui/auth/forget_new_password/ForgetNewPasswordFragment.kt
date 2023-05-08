@@ -1,9 +1,12 @@
 package com.salem.amna.presentation.ui.auth.forget_new_password
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import com.salem.amna.base.BaseFragment
 import com.salem.amna.databinding.FragmentForgetNewPasswordBinding
+import com.salem.amna.presentation.MainActivity
+import com.salem.amna.util.replaceFragment
 
 class ForgetNewPasswordFragment : BaseFragment() {
 
@@ -20,6 +23,13 @@ class ForgetNewPasswordFragment : BaseFragment() {
     }
 
     override fun onEvent() {
+        binding.backIv.setOnClickListener {
+            baseActivity.onBackPressed()
+        }
+
+        binding.submitBtn.setOnClickListener {
+            startActivity(Intent(requireContext(), MainActivity::class.java))
+        }
     }
 
     override fun render() {

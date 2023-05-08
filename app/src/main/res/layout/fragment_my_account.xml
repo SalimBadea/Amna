@@ -116,6 +116,7 @@
                     app:drawableStartCompat="@drawable/ic_lock"
                     app:drawableEndCompat="@drawable/ic_arrow_forward"
                     android:drawablePadding="@dimen/_8sdp"/>
+
                 <TextView
                     android:id="@+id/tvLanguage"
                     android:layout_width="match_parent"

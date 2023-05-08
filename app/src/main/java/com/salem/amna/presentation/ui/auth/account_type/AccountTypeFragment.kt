@@ -8,6 +8,9 @@ import android.view.ViewGroup
 import com.salem.amna.R
 import com.salem.amna.base.BaseFragment
 import com.salem.amna.databinding.FragmentAccountTypeBinding
+import com.salem.amna.presentation.ui.auth.login.LoginFragment
+import com.salem.amna.presentation.ui.home.HomeFragment
+import com.salem.amna.util.replaceFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -25,6 +28,10 @@ class AccountTypeFragment : BaseFragment() {
     }
 
     override fun onEvent() {
+
+        binding.continueBtn.setOnClickListener {
+            replaceFragment(LoginFragment(), R.id.fragmentContainerView, true)
+        }
     }
 
     override fun render() {

@@ -4,7 +4,6 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.content.SharedPreferences
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.navigation.NavController
@@ -12,7 +11,7 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.salem.amna.R
 import com.salem.amna.base.BaseActivity
-import com.salem.amna.databinding.ActivityMainBinding
+import com.salem.amna.databinding.ActivityAuthBinding
 import com.salem.amna.presentation.common.location.LocationPermission
 import com.salem.amna.presentation.common.location.OnLocationPermissionListener
 import com.salem.amna.util.Constants
@@ -21,7 +20,7 @@ import java.util.*
 
 class AuthActivity : BaseActivity() {
 
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityAuthBinding
     private lateinit var navController: NavController
     private lateinit var sharedPreferences: SharedPreferences
     private lateinit var editor: SharedPreferences.Editor
@@ -31,17 +30,22 @@ class AuthActivity : BaseActivity() {
 
     private var TAG = "AuthActivity"
 
-    override fun initVar() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         checkLanguage()
 
         Nammu.init(this)
         mLocationPermission = LocationPermission(this)
         accessLocation()
 
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityAuthBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         setupSmoothBottomMenu()
+    }
+
+    override fun initVar() {
+
     }
 
     override fun onEvent() {
@@ -62,7 +66,7 @@ class AuthActivity : BaseActivity() {
         val config = resources.configuration
         //val lang = "en" // your language code
         //val lang = "ar" // your language code
-        sharedPreferences = getSharedPreferences("TalabSharedPreferences", Context.MODE_PRIVATE)!!
+        sharedPreferences = getSharedPreferences("AmnaSharedPreferences", Context.MODE_PRIVATE)!!
         editor = sharedPreferences.edit()
         val langCode = sharedPreferences.getString("LangCode", "en")
         assert(langCode != null)

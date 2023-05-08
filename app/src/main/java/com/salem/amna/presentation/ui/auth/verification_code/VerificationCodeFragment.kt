@@ -14,6 +14,8 @@ import dagger.hilt.android.AndroidEntryPoint
 import com.salem.amna.R
 import com.salem.amna.base.BaseFragment
 import com.salem.amna.databinding.FragmentVerificationCodeBinding
+import com.salem.amna.presentation.ui.auth.forget_new_password.ForgetNewPasswordFragment
+import com.salem.amna.util.replaceFragment
 import java.util.*
 
 @AndroidEntryPoint
@@ -38,18 +40,19 @@ class VerificationCodeFragment : BaseFragment() {
 
 
     override fun onEvent() {
-        binding.backButton.setOnClickListener {
-            it.findNavController().popBackStack()
+        binding.backIv.setOnClickListener {
+            baseActivity.onBackPressed()
         }
 
-        binding.confirmButton.setOnClickListener {
-            val code =
-                "${binding.otpBox1.text}${binding.otpBox2.text}${binding.otpBox3.text}${binding.otpBox4.text}"
-            if (code.length == 4) {
+        binding.confirmBtn.setOnClickListener {
+            replaceFragment(ForgetNewPasswordFragment(), R.id.fragmentContainerView, true)
+//            val code =
+//                "${binding.otpBox1.text}${binding.otpBox2.text}${binding.otpBox3.text}${binding.otpBox4.text}"
+//            if (code.length == 4) {
 //                viewModel.onEvent(VerificationCodeEvent.Confirm(code))
-            } else {
-                showToast(getString(R.string.please_enter_valid_code))
-            }
+//            } else {
+//                showToast(getString(R.string.please_enter_valid_code))
+//            }
         }
         binding.resend.setOnClickListener {
             if (!timeIsPlayed) {

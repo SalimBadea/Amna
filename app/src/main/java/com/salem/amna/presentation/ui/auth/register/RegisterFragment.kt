@@ -8,6 +8,9 @@ import android.view.ViewGroup
 import com.salem.amna.R
 import com.salem.amna.base.BaseFragment
 import com.salem.amna.databinding.FragmentRegisterBinding
+import com.salem.amna.presentation.ui.auth.forget_password.ForgetPasswordFragment
+import com.salem.amna.presentation.ui.auth.login.LoginFragment
+import com.salem.amna.util.replaceFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -25,6 +28,13 @@ class RegisterFragment : BaseFragment() {
     }
 
     override fun onEvent() {
+        binding.backIv.setOnClickListener {
+            baseActivity.onBackPressed()
+        }
+
+        binding.registerNowTv.setOnClickListener {
+            replaceFragment(LoginFragment(), R.id.fragmentContainerView, true)
+        }
     }
 
     override fun render() {

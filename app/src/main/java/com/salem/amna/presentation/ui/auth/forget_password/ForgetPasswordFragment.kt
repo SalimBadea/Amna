@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import com.salem.amna.R
 import com.salem.amna.base.BaseFragment
 import com.salem.amna.databinding.FragmentForgetPasswordBinding
+import com.salem.amna.presentation.ui.auth.verification_code.VerificationCodeFragment
+import com.salem.amna.util.replaceFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -25,6 +27,13 @@ class ForgetPasswordFragment : BaseFragment() {
     }
 
     override fun onEvent() {
+        binding.backIv.setOnClickListener {
+            baseActivity.onBackPressed()
+        }
+
+        binding.sendBtn.setOnClickListener {
+            replaceFragment(VerificationCodeFragment(), R.id.fragmentContainerView, true)
+        }
     }
 
     override fun render() {

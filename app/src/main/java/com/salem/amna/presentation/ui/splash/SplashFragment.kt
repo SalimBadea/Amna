@@ -10,6 +10,7 @@ import androidx.navigation.fragment.FragmentNavigatorExtras
 import com.salem.amna.R
 import com.salem.amna.data.repository.local.preference.LocalePreference
 import com.salem.amna.databinding.FragmentSplashBinding
+import com.salem.amna.presentation.ui.auth.account_type.AccountTypeFragment
 import com.salem.amna.presentation.ui.auth.login.LoginFragment
 import com.salem.amna.presentation.ui.home.HomeFragment
 import com.salem.amna.presentation.ui.on_boarding.OnBoardingFragment
@@ -47,13 +48,14 @@ class SplashFragment : Fragment() {
             val extras = FragmentNavigatorExtras(
                 binding.imageView to "SplashTransition"
             )
-            if (localePreference.getLoginState() == true) {
-                activity?.finishAffinity()
-                replaceFragment(HomeFragment(), R.id.fragmentContainer, true)
-            } else {
-                activity?.finishAffinity()
-                replaceFragment(OnBoardingFragment(), R.id.fragmentContainer, true)
-            }
+            replaceFragment(AccountTypeFragment(), R.id.fragmentContainerView, true)
+//            if (localePreference.getLoginState() == true) {
+//                activity?.finishAffinity()
+//                replaceFragment(HomeFragment(), R.id.fragmentContainer, true)
+//            } else {
+//                activity?.finishAffinity()
+//                replaceFragment(LoginFragment(), R.id.fragmentContainer, true)
+//            }
         }
     }
 }
