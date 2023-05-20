@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_8sdp"
+    app:cardCornerRadius="@dimen/_8sdp"
+    app:cardElevation="@dimen/_4sdp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ivLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_8sdp"
+            android:src="@drawable/ic_location"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/tvAddressTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="ElMansoura"
+            android:padding="@dimen/_4sdp"
+            android:fontFamily="@font/cairo_semi_bold"
+            android:textSize="@dimen/_12ssp"
+            android:textColor="@color/black"
+            android:layout_marginStart="@dimen/_6sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            app:layout_constraintStart_toEndOf="@id/ivLocation"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/ivLocation"/>
+
+        <TextView
+            android:id="@+id/tvAddressDesc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_6sdp"
+            android:fontFamily="@font/cairo_regular"
+            android:textSize="@dimen/_12ssp"
+            android:textColor="@color/lightGray1"
+            android:text="Emtedad Sharet Al Qreai, المنصورة (قسم 2)، المنصورة، الدقهلية"
+            android:layout_marginStart="@dimen/_6sdp"
+            app:layout_constraintStart_toEndOf="@id/ivLocation"
+            app:layout_constraintEnd_toEndOf="@id/tvAddressTitle"
+            app:layout_constraintTop_toBottomOf="@id/tvAddressTitle"/>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/editBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:background="@drawable/bg_primery_btn"
+            android:text="@string/edit"
+            android:textSize="@dimen/_12ssp"
+            android:textAllCaps="false"
+            android:padding="@dimen/_6sdp"
+            app:backgroundTint="@color/black"
+            app:fontFamily="@font/cairo_regular"
+            app:layout_constraintEnd_toStartOf="@id/deleteBtn"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tvAddressTitle"
+            app:layout_constraintTop_toBottomOf="@+id/tvAddressDesc" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/deleteBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:background="@drawable/bg_primery_btn"
+            android:text="@string/delete"
+            android:textSize="@dimen/_12ssp"
+            android:textAllCaps="false"
+            android:textColor="@color/lightGray1"
+            android:padding="@dimen/_6sdp"
+            app:backgroundTint="@null"
+            android:backgroundTint="@color/lightGray2"
+            app:fontFamily="@font/cairo_regular"
+            app:layout_constraintBottom_toBottomOf="@id/editBtn"
+            app:layout_constraintEnd_toEndOf="@id/tvAddressTitle"
+            app:layout_constraintStart_toEndOf="@id/editBtn"
+            app:layout_constraintTop_toTopOf="@id/editBtn" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

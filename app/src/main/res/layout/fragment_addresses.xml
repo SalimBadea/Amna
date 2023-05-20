@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".presentation.ui.earnings.NotificationsFragment">
+    tools:context=".presentation.ui.my_account.addresses.AddressesFragment">
 
     <ImageView
         android:id="@+id/backIv"
@@ -21,12 +21,33 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/cairo_bold"
-        android:text="@string/notifications"
+        android:text="@string/addresses"
         android:textColor="@color/black"
         android:textSize="@dimen/_16ssp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/backIv" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/tvAddAddress"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/cairo_regular"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:layout_marginHorizontal="@dimen/_32sdp"
+        android:background="@drawable/bg_primery_btn"
+        android:gravity="center"
+        app:backgroundTint="@color/mainGreen"
+        android:text="@string/new_address"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_12ssp"
+        app:icon="@drawable/ic_add"
+        app:iconGravity="textStart"
+        app:iconPadding="@dimen/_8sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle" />
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="0dp"
@@ -35,7 +56,7 @@
         android:fitsSystemWindows="true"
         android:layout_marginTop="@dimen/_8sdp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvTitle"
+        app:layout_constraintTop_toBottomOf="@id/tvAddAddress"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
@@ -44,12 +65,12 @@
             android:layout_height="wrap_content">
 
             <com.factor.bouncy.BouncyRecyclerView
-                android:id="@+id/rvNotifications"
+                android:id="@+id/rvCourses"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_marginBottom="@dimen/_32sdp"
-                android:padding="@dimen/_8sdp"
-                tools:listitem="@layout/item_notification"
+                android:padding="@dimen/_4sdp"
+                tools:listitem="@layout/item_address"
                 tools:itemCount="2"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -58,6 +79,5 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

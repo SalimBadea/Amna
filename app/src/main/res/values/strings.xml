@@ -95,6 +95,10 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="notifications">Notifications</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+    <string name="addresses">Addresses</string>
+    <string name="new_address">New Address</string>
 
 
 </resources>
