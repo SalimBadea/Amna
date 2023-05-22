@@ -1,7 +1,7 @@
 package com.salem.amna.presentation.ui.auth.verification_code
 
 import com.salem.amna.data.models.post_body.RegisterBody
-import com.salem.amna.data.models.post_body.SubmitRegisterBody
+import com.salem.amna.data.models.post_body.ChangePasswordBody
 import com.salem.amna.data.models.response.auth.RegisterResponse
 
 data class VerificationCodeState(
@@ -22,7 +22,7 @@ data class VerificationCodeState(
     val termsAndConditions: Boolean = false,
     val sendMail: Boolean = false,
 ) {
-    fun toSubmitRegisterBody() = SubmitRegisterBody(
+    fun toSubmitRegisterBody() = ChangePasswordBody(
         email = email,
         code = code,
         phone = phone,
