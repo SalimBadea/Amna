@@ -12,7 +12,7 @@ import retrofit2.http.Body
 
 interface AuthService {
 
-    @POST("client/register/send/code")
+    @POST("register")
     suspend fun register(
         @Body registerBody: RegisterBody
     ): Response<MainResponseModel<RegisterResponse?>>

@@ -15,7 +15,7 @@ interface GeneralService {
         @Path("id") page:Int
     ): Response<MainResponseModel<GeneralResponse>>
 
-    @POST("general/contact-us")
+    @POST("contact_us")
     suspend fun contactUs(
         @Body contactUsBody: ContactUsBody
     ): Response<MainResponseModel<ContactUsResponse>>
