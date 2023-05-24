@@ -29,7 +29,7 @@ class UpdateAccountInfoUseCase @Inject constructor(
                 val errorString = myResponse.errorBody()?.byteStream()?.bufferedReader().use { it?.readText() }  // defaults to UTF-8
 
                 val errorMessage =
-                    getErrorResponse(errorString!!).message ?: ""
+                    getErrorResponse(errorString!!).errors!![0] ?: ""
                 Log.e(TAG, "invoke: Error UpdateAccountInfo use case $errorMessage")
                 emit(Resource.Error(errorMessage))
             }
