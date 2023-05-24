@@ -134,7 +134,7 @@ class MyAccountFragment : BaseFragment() {
 
         binding.profileImage.loadImageFromInternet(
             state.result?.user?.image,
-            ContextCompat.getDrawable(requireContext(), R.drawable.logo)
+            ContextCompat.getDrawable(requireContext(), R.drawable.ic_user)
         )
 
         Log.d("TAG", "initUserData: $state")

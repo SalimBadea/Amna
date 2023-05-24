@@ -1,5 +1,6 @@
 package com.salem.amna.presentation.ui.splash
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,9 +8,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.FragmentNavigatorExtras
+import androidx.navigation.fragment.NavHostFragment
 import com.salem.amna.R
 import com.salem.amna.data.repository.local.preference.LocalePreference
 import com.salem.amna.databinding.FragmentSplashBinding
+import com.salem.amna.presentation.MainActivity
 import com.salem.amna.presentation.ui.auth.account_type.AccountTypeFragment
 import com.salem.amna.presentation.ui.auth.login.LoginFragment
 import com.salem.amna.presentation.ui.home.HomeFragment
@@ -49,13 +52,15 @@ class SplashFragment : Fragment() {
                 binding.imageView to "SplashTransition"
             )
             replaceFragment(AccountTypeFragment(), R.id.fragmentContainerView, true)
-//            if (localePreference.getLoginState() == true) {
-//                activity?.finishAffinity()
-//                replaceFragment(HomeFragment(), R.id.fragmentContainer, true)
-//            } else {
-//                activity?.finishAffinity()
-//                replaceFragment(LoginFragment(), R.id.fragmentContainer, true)
-//            }
+            if (localePreference.getLoginState() == true) {
+                startActivity(Intent(requireContext(), MainActivity::class.java))
+                requireActivity().finishAffinity()
+            } else if (localePreference.getLangState() == true){
+                replaceFragment(LoginFragment(), R.id.fragmentContainerView, true)
+            }else{
+                replaceFragment(AccountTypeFragment(), R.id.fragmentContainerView, true)
+
+            }
         }
     }
 }

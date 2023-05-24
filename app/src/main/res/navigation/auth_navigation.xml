@@ -64,6 +64,17 @@
         android:name="com.salem.amna.presentation.ui.auth.account_type.AccountTypeFragment"
         android:label="fragment_account_type"
         tools:layout="@layout/fragment_account_type" >
+
+        <action
+            android:id="@+id/action_accountTypeFragment_to_languageFragment"
+            app:destination="@id/languageFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/languageFragment"
+        android:name="com.salem.amna.presentation.ui.auth.account_type.AccountTypeFragment"
+        android:label="language_type"
+        tools:layout="@layout/fragment_language" >
         <action
             android:id="@+id/action_forgetPasswordFragment_to_loginFragment"
             app:destination="@id/loginFragment" />

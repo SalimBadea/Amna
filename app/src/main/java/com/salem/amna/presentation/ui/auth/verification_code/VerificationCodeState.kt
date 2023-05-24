@@ -13,6 +13,7 @@ data class VerificationCodeState(
     val name: String = "",
     val email: String = "",
     val code: String = "",
+    val oldPassword: String = "",
     val password: String = "",
     val passwordConfirmation: String = "",
     val phone: String = "",
@@ -23,10 +24,7 @@ data class VerificationCodeState(
     val sendMail: Boolean = false,
 ) {
     fun toSubmitRegisterBody() = ChangePasswordBody(
-        email = email,
-        code = code,
-        phone = phone,
-        name = name,
+        current_password = oldPassword,
         password = password,
         passwordConfirmation = passwordConfirmation,
     )
@@ -36,7 +34,6 @@ data class VerificationCodeState(
         phone = phone,
         name = name,
         password = password,
-        passwordConfirmation = passwordConfirmation,
     )
 
 }

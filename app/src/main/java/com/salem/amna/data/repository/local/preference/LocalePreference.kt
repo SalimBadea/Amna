@@ -3,7 +3,9 @@ package com.salem.amna.data.repository.local.preference
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.edit
+import com.salem.amna.data.repository.local.preference.PreferencesKeys.accountType
 import com.salem.amna.data.repository.local.preference.PreferencesKeys.fcmTokenKey
+import com.salem.amna.data.repository.local.preference.PreferencesKeys.isLang
 import com.salem.amna.data.repository.local.preference.PreferencesKeys.isLogin
 import com.salem.amna.data.repository.local.preference.PreferencesKeys.langKey
 import com.salem.amna.data.repository.local.preference.PreferencesKeys.latPreferencesKey
@@ -21,6 +23,13 @@ class LocalePreference @Inject constructor(private val dataStore: DataStore<Pref
         }
     }
     suspend fun getLoginState(): Boolean? = dataStore.data.first()[isLogin]
+
+    suspend fun setLangState(isLang: Boolean) {
+        dataStore.edit { preferences ->
+            preferences[PreferencesKeys.isLang] = isLang
+        }
+    }
+    suspend fun getLangState(): Boolean? = dataStore.data.first()[isLang]
 
     suspend fun saveToken(id: String) {
         dataStore.edit { preferences ->
@@ -68,6 +77,15 @@ class LocalePreference @Inject constructor(private val dataStore: DataStore<Pref
             preferences[langKey] = lang
         }
     }
+
+    suspend fun setAccountType(type: Int){
+        dataStore.edit { preferences ->
+            preferences[accountType] = type
+        }
+    }
+
+    suspend fun getAccountType(): Int? = dataStore.data.first()[accountType]
+
 
     suspend fun getLanguage(): String? = dataStore.data.first()[langKey]
 

@@ -71,8 +71,7 @@
             android:padding="@dimen/_8sdp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:drawableStartCompat="@drawable/ic_home"
-            app:drawableTint="@color/white" />
+            app:drawableStartCompat="@drawable/ic_home" />
 
         <TextView
             android:id="@+id/home_title"
@@ -139,8 +138,7 @@
             android:padding="@dimen/_8sdp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:drawableStartCompat="@drawable/ic_work"
-            app:drawableTint="@color/darkGray" />
+            app:drawableStartCompat="@drawable/ic_work" />
 
         <TextView
             android:id="@+id/work_title"

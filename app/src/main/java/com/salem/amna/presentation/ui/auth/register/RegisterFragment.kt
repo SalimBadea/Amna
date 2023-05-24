@@ -51,6 +51,10 @@ class RegisterFragment : BaseFragment() {
             replaceFragment(LoginFragment(), R.id.fragmentContainerView, true)
         }
 
+        binding.registerBtn.setOnClickListener {
+            viewModel.onEvent(RegisterEvent.Submit)
+        }
+
         handelTextChange()
 
     }
@@ -99,7 +103,7 @@ class RegisterFragment : BaseFragment() {
                     hideLoadingDialog()
                     sharedViewModel.setRegisterData(state)
                     sharedViewModel.setCode(state.result?.code)
-//                    findNavController().navigate(RegisterFragmentDirections.actionRegisterFragmentToVerificationCodeFragment())
+                    replaceFragment(LoginFragment(), R.id.fragmentContainerView, true)
                     viewModel.clearSuccessState()
                 }
                 if (state.isLoading) {

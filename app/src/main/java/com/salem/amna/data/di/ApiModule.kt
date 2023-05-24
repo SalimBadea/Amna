@@ -1,6 +1,8 @@
 package com.salem.amna.data.di
 
+import com.salem.amna.data.apiservice.accountinfo.AccountInfoService
 import com.salem.amna.data.apiservice.auth.AuthService
+import com.salem.amna.data.apiservice.general.GeneralService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -26,10 +28,10 @@ class ApiModule {
 //        return retrofit.create(StoresService::class.java)
 //    }
 //
-//    @Provides
-//    fun bindGeneralService(retrofit: Retrofit): GeneralService {
-//        return retrofit.create(GeneralService::class.java)
-//    }
+    @Provides
+    fun bindGeneralService(retrofit: Retrofit): GeneralService {
+        return retrofit.create(GeneralService::class.java)
+    }
 //
 //    @Provides
 //    fun bindSearchService(retrofit: Retrofit): SearchService {
@@ -51,10 +53,10 @@ class ApiModule {
 //        return retrofit.create(AddressService::class.java)
 //    }
 //
-//    @Provides
-//    fun bindAccountInfo(retrofit: Retrofit): AccountInfoService {
-//        return retrofit.create(AccountInfoService::class.java)
-//    }
+    @Provides
+    fun bindAccountInfo(retrofit: Retrofit): AccountInfoService {
+        return retrofit.create(AccountInfoService::class.java)
+    }
 //
 //    @Provides
 //    fun bindSubscriptions(retrofit: Retrofit): SubscriptionsService {
