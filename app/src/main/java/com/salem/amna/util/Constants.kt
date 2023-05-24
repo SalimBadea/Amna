@@ -1,6 +1,9 @@
 package com.salem.amna.util
 
 import com.salem.amna.BuildConfig
+import com.salem.amna.R
+
+typealias ResString = R.string
 
 object Constants {
     const val package_name = BuildConfig.APPLICATION_ID

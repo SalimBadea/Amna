@@ -8,4 +8,7 @@ data class LoginBody(
 
     @field:SerializedName("password")
     val password: String? = null,
+
+    @field:SerializedName("fcm_token")
+    val fcmToken: String? = null,
 )

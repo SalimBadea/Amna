@@ -92,13 +92,25 @@
     <string name="coupon">Coupon</string>
     <string name="order_delivery">Order Delivery</string>
     <string name="past_orders">Past Orders</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="notifications">Notifications</string>
     <string name="edit">Edit</string>
     <string name="delete">Delete</string>
     <string name="addresses">Addresses</string>
     <string name="new_address">New Address</string>
+
+    <string name="the_email_can_not_be_blank">The email can\'t be blank</string>
+    <string name="the_password_can_not_be_blank">The password can\'t be blank</string>
+    <string name="the_phone_can_not_be_blank">The phone can\'t be blank</string>
+    <string name="the_repeat_password_can_not_be_blank">The repeat password can\'t be blank</string>
+    <string name="password_is_not_match">The Password is not match</string>
+    <string name="that_is_not_a_valid_email">That\'s not a valid email</string>
+    <string name="that_is_not_a_valid_phone">That\'s not a valid phone</string>
+    <string name="user_name_is_empty_error_message">The username can\'t be blank</string>
+    <string name="message_is_empty_error_message">The message can\'t be blank</string>
+    <string name="field_is_empty_error_message">Field can\'t be blank</string>
+    <string name="phone_must_be_11_number">phone must be 11 numbers</string>
+    <string name="password_must_atleast_6_character">password must at least 6 character</string>
+    <string name="password_can_not_be_empty">كلمة السر لايمكن ان تكون فارغة</string>
 
 
 </resources>

@@ -87,4 +87,19 @@
     <string name="order_delivery">تسليم الطلب</string>
     <string name="past_orders">الطلبات السابقة</string>
 
+    <string name="that_is_not_a_valid_email">هذا البريد الالكتروني غير صالح</string>
+    <string name="that_is_not_a_valid_phone">رقم الجوال غير صالح</string>
+    <string name="the_email_can_not_be_blank">البريد الالكتروني لايمكن ان يكون فارغا</string>
+    <string name="password_is_not_match">كلمة السر غير متطابقة</string>
+    <string name="user_name_is_empty_error_message">اسم المستخدم لايمكن ان يكون فارغا</string>
+    <string name="message_is_empty_error_message">الرسالة لايمكن ان تكون فارغه</string>
+    <string name="field_is_empty_error_message">الحقل لايمكن ان يكون فارغا</string>
+    <string name="the_password_can_not_be_blank">كلمة السر لايمكن ان تكون فارغة</string>
+    <string name="the_phone_can_not_be_blank">االهاتف لايمكن ان يكون فارغا</string>
+    <string name="the_repeat_password_can_not_be_blank">كلمة السر لايمكن ان تكون فارغة</string>
+    <string name="phone_must_be_11_number">الهاتف يجب ان يتكون من 11 ارقام</string>
+    <string name="password_must_atleast_6_character">كلمة السر يجب ان تكون علي الاقل 6 احرف</string>
+    <string name="password_can_not_be_empty">كلمة السر لايمكن ان تكون فارغة</string>
+
+
 </resources>
