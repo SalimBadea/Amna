@@ -6,6 +6,8 @@ import com.salem.amna.R
 typealias ResString = R.string
 
 object Constants {
+
+    const val BASE_URL="https://nivert-amna.com/api/v1/"
     const val package_name = BuildConfig.APPLICATION_ID
     const val ENGLISH = "en"
     const val ARABIC = "ar"
