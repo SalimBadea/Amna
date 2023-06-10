@@ -1,5 +1,6 @@
 package com.salem.amna.presentation.ui.auth.verification_code
 
+import android.content.Intent
 import android.os.CountDownTimer
 import android.text.Editable
 import android.text.TextWatcher
@@ -14,15 +15,19 @@ import dagger.hilt.android.AndroidEntryPoint
 import com.salem.amna.R
 import com.salem.amna.base.BaseFragment
 import com.salem.amna.databinding.FragmentVerificationCodeBinding
+import com.salem.amna.presentation.MainActivity
+import com.salem.amna.presentation.common.NavigationCommand
+import com.salem.amna.presentation.common.UiEffect
 import com.salem.amna.presentation.ui.auth.forget_new_password.ForgetNewPasswordFragment
+import com.salem.amna.presentation.ui.auth.sharedviewmodel.AuthSharedViewModel
 import com.salem.amna.util.replaceFragment
 import java.util.*
 
 @AndroidEntryPoint
 class VerificationCodeFragment : BaseFragment() {
 
-//    private val viewModel: VerificationCodeViewModel by viewModels()
-//    private val sharedViewModel: AuthSharedViewModel by activityViewModels()
+    private val viewModel: VerificationCodeViewModel by viewModels()
+    private val sharedViewModel: AuthSharedViewModel by activityViewModels()
     lateinit var time: CountDownTimer
     lateinit var sDuration: String
     private var timeIsPlayed = false
@@ -45,14 +50,13 @@ class VerificationCodeFragment : BaseFragment() {
         }
 
         binding.confirmBtn.setOnClickListener {
-            replaceFragment(ForgetNewPasswordFragment(), R.id.fragmentContainerView, true)
-//            val code =
-//                "${binding.otpBox1.text}${binding.otpBox2.text}${binding.otpBox3.text}${binding.otpBox4.text}"
-//            if (code.length == 4) {
-//                viewModel.onEvent(VerificationCodeEvent.Confirm(code))
-//            } else {
-//                showToast(getString(R.string.please_enter_valid_code))
-//            }
+            val code =
+                "${binding.otpBox1.text}${binding.otpBox2.text}${binding.otpBox3.text}${binding.otpBox4.text}"
+            if (code.length == 4) {
+                viewModel.onEvent(VerificationCodeEvent.Confirm(code))
+            } else {
+                showToast(getString(R.string.please_enter_valid_code))
+            }
         }
         binding.resend.setOnClickListener {
             if (!timeIsPlayed) {
@@ -103,21 +107,19 @@ class VerificationCodeFragment : BaseFragment() {
     }
 
     override fun render() {
-//        lifecycleScope.launchWhenStarted {
-//            viewModel.uiState.collect { state ->
-//                if (state.isUpdate) {
-//                    hideLoadingDialog()
-//                    binding.code.text = state.result?.code.toString()
-//                } else if (state.isSuccess) {
-//                    hideLoadingDialog()
-//                    findNavController().navigate(VerificationCodeFragmentDirections.actionVerificationCodeFragmentToVideoIntroFragment())
-//                } else if (state.isLoading) {
-//                    showLoadingDialog()
-//                } else if (state.error.isNotBlank()) {
-//                    hideLoadingDialog()
-//                }
-//            }
-//        }
+        lifecycleScope.launchWhenStarted {
+            viewModel.uiState.collect { state ->
+                if (state.isSuccess) {
+                    hideLoadingDialog()
+                    startActivity(Intent(requireContext(), MainActivity::class.java))
+                    requireActivity().finishAffinity()
+                } else if (state.isLoading) {
+                    showLoadingDialog()
+                } else if (state.error.isNotBlank()) {
+                    hideLoadingDialog()
+                }
+            }
+        }
     }
 
     private fun initData() {
@@ -126,13 +128,13 @@ class VerificationCodeFragment : BaseFragment() {
 //                viewModel.onEvent(VerificationCodeEvent.InitRegisterData(data))
 //            }
         }
-        lifecycleScope.launchWhenStarted {
+//        lifecycleScope.launchWhenStarted {
 //            sharedViewModel.code.collect { code ->
 //                code?.let {
 //                    binding.code.text = it.toString()
 //                }
 //            }
-        }
+//        }
     }
 
 
@@ -175,31 +177,33 @@ class VerificationCodeFragment : BaseFragment() {
     }
 
     override fun navigate() {
-//        lifecycleScope.launchWhenStarted {
-//            viewModel.navigation.collect { navigation ->
-//                when (navigation) {
-//                    NavigationCommand.Back -> {
-//                        findNavController().popBackStack()
-//                    }
-//                    is NavigationCommand.ToDirection -> {
-//                        findNavController().navigate(navigation.directions)
-//                    }
-//                }
-//
-//            }
-//        }
+        lifecycleScope.launchWhenStarted {
+            viewModel.navigation.collect { navigation ->
+                when (navigation) {
+                    NavigationCommand.Back -> {
+                        baseActivity.onBackPressed()
+                    }
+                    is NavigationCommand.ToDirection -> {
+                        findNavController().navigate(navigation.directions)
+                    }
+                    else -> {}
+                }
+
+            }
+        }
     }
 
     override fun showEffect() {
-//        lifecycleScope.launchWhenStarted {
-//            viewModel.effect.collect { effect ->
-//                when (effect) {
-//                    is UiEffect.ShowToast -> {
-//                        Toast.makeText(context, effect.message, Toast.LENGTH_SHORT).show()
-//                    }
-//                }
-//
-//            }
-//        }
+        lifecycleScope.launchWhenStarted {
+            viewModel.effect.collect { effect ->
+                when (effect) {
+                    is UiEffect.ShowToast -> {
+                        Toast.makeText(context, effect.message, Toast.LENGTH_SHORT).show()
+                    }
+                    else -> {}
+                }
+
+            }
+        }
     }
 }

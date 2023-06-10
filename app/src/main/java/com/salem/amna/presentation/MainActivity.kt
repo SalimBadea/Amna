@@ -10,6 +10,7 @@ import com.salem.amna.R
 import com.salem.amna.base.BaseActivity
 import com.salem.amna.data.repository.local.preference.LocalePreference
 import com.salem.amna.databinding.ActivityMainBinding
+import com.salem.amna.presentation.ui.categories.CategoriesFragment
 import com.salem.amna.presentation.ui.courses.CoursesFragment
 import com.salem.amna.presentation.ui.earnings.MyEarningsFragment
 import com.salem.amna.presentation.ui.home.HomeFragment
@@ -59,7 +60,8 @@ class MainActivity : BaseActivity() {
             }
 
             2 -> {
-//                replaceFragment(DeliverItemsFragment(), R.id.fragmentContainer, true)
+                replaceFragment(CategoriesFragment(), R.id.fragmentContainer, true)
+                openFragmentByPosition()
             }
 
             1 -> {
@@ -150,7 +152,7 @@ class MainActivity : BaseActivity() {
 
     suspend fun gotoDeliveryItems() {
         delay(1800)
-//        replaceFragment(DeliverItemsFragment(), R.id.fragmentContainer, true)
+        replaceFragment(CategoriesFragment(), R.id.fragmentContainer, true)
     }
 
     override fun observeData() {

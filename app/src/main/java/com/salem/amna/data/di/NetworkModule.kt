@@ -53,7 +53,7 @@ object NetworkModule {
             val requestBuilder: Request.Builder = original.newBuilder()
                 .addHeader("Accept", "application/json")
                 .addHeader("Authorization", "Bearer $token")
-                .addHeader("Accept-Language", Locale.getDefault().language)
+                .addHeader("locale", Locale.getDefault().language)
             val request: Request = requestBuilder.build()
             chain.proceed(request)
         }

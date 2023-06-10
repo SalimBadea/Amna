@@ -4,8 +4,10 @@ package com.salem.amna.data.di.module
 import com.salem.amna.data.apiservice.auth.AuthService
 import com.salem.amna.data.repository.remote.auth.LoginRepositoryImpl
 import com.salem.amna.data.repository.remote.auth.RegisterRepositoryImpl
+import com.salem.amna.data.repository.remote.auth.VerifyRepositoryImpl
 import com.salem.amna.domain.repository.auth.LoginRepository
 import com.salem.amna.domain.repository.auth.RegisterRepository
+import com.salem.amna.domain.repository.auth.VerifyRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -26,6 +28,12 @@ object AuthModule {
     @Singleton
     fun provideRegisterRepository(api: AuthService): RegisterRepository {
         return RegisterRepositoryImpl(api)
+    }
+
+    @Provides
+    @Singleton
+    fun provideVerifyRepository(api: AuthService): VerifyRepository {
+        return VerifyRepositoryImpl(api)
     }
 
 }

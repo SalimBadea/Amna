@@ -38,13 +38,23 @@ class RegisterViewModel @Inject constructor(
     private val _effect: Channel<UiEffect> = Channel()
     val effect = _effect.receiveAsFlow()
 
+    private var fcmToken: String? = null
+    private var type: Int? = null
+
+    init {
+        viewModelScope.launch {
+            fcmToken = localePreference.getFCMToken()
+            type = localePreference.getAccountType()
+        }
+    }
+
     private fun register() {
         registerUseCase(
-            _uiState.value.toRegisterBody()
-        ).onEach { result ->
+            _uiState.value.toRegisterBody().copy(accountType = type, firebaseToken = fcmToken)).onEach { result ->
             _uiState.value = when (result) {
                 is Resource.Success -> {
                     _effect.send(UiEffect.ShowToast(result.data?.message ?: ""))
+                    saveToken(result.data?.data?.token ?: "")
                     _uiState.value.copy(isSuccess = result.data != null, result = result.data?.data, isLoading = false)
                 }
                 is Resource.Error -> {

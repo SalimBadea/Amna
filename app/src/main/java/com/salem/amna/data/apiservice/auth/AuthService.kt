@@ -22,5 +22,10 @@ interface AuthService {
         @Body loginBody: LoginBody
     ): Response<MainResponseModel<LoginResponse>>
 
+    @POST("verifiy")
+    suspend fun verify(
+        @Query("code") code: String
+    ): Response<MainResponseModel<Any>>
+
 
 }

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "887269210413",
+    "project_id": "amna-9029b",
+    "storage_bucket": "amna-9029b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:887269210413:android:dec38220a4bd2c807e3ba4",
+        "android_client_info": {
+          "package_name": "com.salem.amna"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "887269210413-fnhtddnpf9mfe7bg8p61c6un6ceqsr1l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.salem.amna",
+            "certificate_hash": "23aa0743d7f28e57998e7593bb5ed009802c6e5e"
+          }
+        },
+        {
+          "client_id": "887269210413-u6jvc0i5866tbr56ljjoj5ct4t4ebk02.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBylAX_M673i4dYeqVAKdoPuqOtaFVgcWg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "887269210413-u6jvc0i5866tbr56ljjoj5ct4t4ebk02.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

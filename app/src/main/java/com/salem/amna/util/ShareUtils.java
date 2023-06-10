@@ -46,7 +46,7 @@ public class ShareUtils {
             FileOutputStream out = new FileOutputStream(file);
             bmp.compress(Bitmap.CompressFormat.PNG, 90, out);
             out.close();
-            bmpUri = FileProvider.getUriForFile(context, "net.moltaqa.talab_client" + ".fileprovider",file);
+            bmpUri = FileProvider.getUriForFile(context, "com.salem.amna" + ".fileprovider",file);
         } catch (IOException e) {
             e.printStackTrace();
         }

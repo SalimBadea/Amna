@@ -13,7 +13,8 @@ object Constants {
     const val ARABIC = "ar"
 
     const val PREFERENCES_DB: String = "PreferencesDb"
-
+    val NOTIFICATION_CHANNEL_ID = "notification_channel"
+    val NOTIFICATION_CHANNEL_NAME = "notification_name"
 
     // api links part
 //const val BASE_URL = "https://safriapp.com/"

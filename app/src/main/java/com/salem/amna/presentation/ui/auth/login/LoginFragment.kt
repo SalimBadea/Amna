@@ -34,8 +34,7 @@ class LoginFragment : BaseFragment() {
 
     override fun onEvent() {
         binding.loginBtn.setOnClickListener {
-            startActivity(Intent(requireContext(), MainActivity::class.java))
-            requireActivity().finishAffinity()
+           viewModel.onEvent(LoginEvent.Submit)
         }
 
         binding.forgetPasswordTv.setOnClickListener {
@@ -74,9 +73,9 @@ class LoginFragment : BaseFragment() {
             viewModel.uiState.collect { state ->
                 showErrorValidation(state)
                 if (state.isSuccess) {
+                    hideLoadingDialog()
                     startActivity(Intent(requireContext(), MainActivity::class.java))
                     requireActivity().finishAffinity()
-                    hideLoadingDialog()
                 } else if (state.isLoading) {
                     showLoadingDialog()
                 } else if (state.error.isNotBlank()) {

@@ -14,7 +14,7 @@ data class RegisterBody(
     val email: String? = null,
 
     @field:SerializedName("account_type")
-    val accountType: String? = null,
+    val accountType: Int? = null,
 
     @field:SerializedName("password")
     val password: String? = null,

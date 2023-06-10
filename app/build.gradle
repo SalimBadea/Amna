@@ -5,9 +5,14 @@ plugins {
     id 'androidx.navigation.safeargs'
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
+    id 'com.google.gms.google-services'
 }
 
 android {
+    signingConfigs {
+        release {
+        }
+    }
     namespace 'com.salem.amna'
     compileSdk 33
 
@@ -28,9 +33,9 @@ android {
             buildConfigField 'String', 'BASE_URL', BASE_URL
         }
 
-        debug{
-            buildConfigField 'String', 'BASE_URL', BASE_URL
-        }
+//        debug{
+//            buildConfigField 'String', 'BASE_URL', BASE_URL
+//        }
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -43,6 +48,7 @@ android {
     buildFeatures {
         viewBinding true
         dataBinding true
+        buildConfig = true
     }
     bundle {
         language {
@@ -94,6 +100,12 @@ dependencies {
     implementation "com.google.android.gms:play-services-maps:$google_map_version"
     implementation "com.google.android.libraries.places:places:$google_map_places_version"
     implementation 'com.google.maps:google-maps-services:0.17.0'
+
+    // FireBase
+    implementation platform('com.google.firebase:firebase-bom:32.1.0')
+    implementation 'com.google.firebase:firebase-messaging-ktx:23.1.1'
+    implementation 'com.google.firebase:firebase-crashlytics-buildtools:2.9.2'
+    implementation 'com.google.firebase:firebase-analytics-ktx'
 
     //Nammu for permission management
     implementation 'com.github.tajchert:nammu:1.2.0'

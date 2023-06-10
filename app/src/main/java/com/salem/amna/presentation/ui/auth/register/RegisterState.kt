@@ -22,7 +22,7 @@ data class RegisterState(
     val phone: String = "",
     val phoneError: Int? = null,
     val gender: String = "male",
-    val accountType: String = "",
+    val accountType: Int = 1,
     val accountTypeError: Int? = null,
     val platform: String = "android",
     val platformError: Int? = null,

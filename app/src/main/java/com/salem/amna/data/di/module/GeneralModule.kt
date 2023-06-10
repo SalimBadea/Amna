@@ -18,9 +18,4 @@ object GeneralModule {
     fun provideGeneralRepository(api: GeneralService): GeneralRepository {
         return GeneralRepositoryImpl(api)
     }
-
-
-
-
-
 }

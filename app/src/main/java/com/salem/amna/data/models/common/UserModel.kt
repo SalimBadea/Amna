@@ -19,6 +19,11 @@ data class UserModel(
 	@field:SerializedName("image")
 	val image: String? = null,
 
+	@field:SerializedName("is_phone_verified")
+	val isPhoneVerified: Boolean? = null,
+
+	@field:SerializedName("is_active")
+	val isActive: Boolean? = null,
 
 	)
 

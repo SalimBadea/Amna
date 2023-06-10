@@ -82,7 +82,8 @@ class LanguageFragment : BaseFragment() {
                 editor.apply()
                 editor.commit()
 
-                replaceFragment(LoginFragment(), R.id.fragmentContainerView, true)
+                startActivity(Intent(requireContext(), AuthActivity::class.java))
+                requireActivity().finishAffinity()
             } else {
                 runBlocking {
                     localePreference.setLangState(true)

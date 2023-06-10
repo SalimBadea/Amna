@@ -139,8 +139,8 @@ class MyAccountFragment : BaseFragment() {
 
         Log.d("TAG", "initUserData: $state")
 
-        binding.tvName.setText(state.name)
-        binding.tvEmail.setText(state.email)
+        binding.tvName.text = state.name
+        binding.tvEmail.text = state.email
 
 
         sharedViewModel.setUserImage(state.result?.user?.image)

@@ -20,6 +20,7 @@ import com.salem.amna.presentation.common.UiEffect
 import com.salem.amna.presentation.ui.auth.forget_password.ForgetPasswordFragment
 import com.salem.amna.presentation.ui.auth.login.LoginFragment
 import com.salem.amna.presentation.ui.auth.sharedviewmodel.AuthSharedViewModel
+import com.salem.amna.presentation.ui.auth.verification_code.VerificationCodeFragment
 import com.salem.amna.util.replaceFragment
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.*
@@ -102,8 +103,8 @@ class RegisterFragment : BaseFragment() {
                 if (state.isSuccess) {
                     hideLoadingDialog()
                     sharedViewModel.setRegisterData(state)
-                    sharedViewModel.setCode(state.result?.code)
-                    replaceFragment(LoginFragment(), R.id.fragmentContainerView, true)
+//                    sharedViewModel.setCode(state.result?.code)
+                    replaceFragment(VerificationCodeFragment(), R.id.fragmentContainerView, true)
                     viewModel.clearSuccessState()
                 }
                 if (state.isLoading) {

@@ -43,7 +43,7 @@ class LoginViewModel @Inject constructor(
     }
 
     private fun login() {
-        loginUseCase(_uiState.value.toLoginBody().copy(fcmToken = fcmToken)).onEach { result ->
+        loginUseCase(_uiState.value.toLoginBody()).onEach { result ->
             _uiState.value = when (result) {
                 is Resource.Success -> {
                     saveToken(result.data?.data?.accessToken ?: "")
@@ -101,17 +101,17 @@ class LoginViewModel @Inject constructor(
     }
 
     private fun submitData() {
-        val emailResult = validateEmail(_uiState.value.phone)
+        val phoneResult = validateEmail(_uiState.value.phone)
         val passwordResult = validatePassword(_uiState.value.password)
 
         val hasError = listOf(
-            emailResult,
+            phoneResult,
             passwordResult,
         ).any { !it.successful }
 
         if (hasError) {
             _uiState.value = _uiState.value.copy(
-                phoneError = emailResult.errorMessage,
+                phoneError = phoneResult.errorMessage,
                 passwordError = passwordResult.errorMessage,
             )
             return

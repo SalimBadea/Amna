@@ -97,6 +97,10 @@
     <string name="delete">Delete</string>
     <string name="addresses">Addresses</string>
     <string name="new_address">New Address</string>
+    <string name="points_worth">points</string>
+
+    
+    <string name="product_points" translatable="false">%s %s</string>
 
     <string name="the_email_can_not_be_blank">The email can\'t be blank</string>
     <string name="the_password_can_not_be_blank">The password can\'t be blank</string>

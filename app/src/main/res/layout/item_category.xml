@@ -1,57 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    app:cardElevation="@dimen/_8sdp"
-    app:cardCornerRadius="@dimen/_8sdp"
-    android:layout_margin="@dimen/_6sdp">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <data>
+
+        <variable
+            name="model"
+            type="com.salem.amna.data.models.common.CategoriesModel" />
+
+    </data>
+
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_6sdp"
+        app:cardCornerRadius="@dimen/_8sdp"
+        app:cardElevation="@dimen/_8sdp">
 
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/ivCategory"
-            android:layout_width="0dp"
-            android:layout_height="@dimen/_100sdp"
-            android:src="@drawable/electronics"
-            android:layout_margin="@dimen/_8sdp"
-            app:shapeAppearance="@style/ImageRoundedStyle8"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:scaleType="fitXY"/>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/tvTitle"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/cairo_bold"
-            android:textSize="@dimen/_14ssp"
-            android:padding="@dimen/_3sdp"
-            android:textColor="@color/black"
-            tools:text="مخلفات إلكترونية - كهربائية"
-            app:layout_constraintTop_toBottomOf="@id/ivCategory"
-            app:layout_constraintStart_toStartOf="@id/ivCategory"
-            app:layout_constraintEnd_toEndOf="@id/ivCategory"/>
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/ivCategory"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_margin="@dimen/_8sdp"
+                android:scaleType="fitXY"
+                android:src="@drawable/electronics"
+                android:adjustViewBounds="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearance="@style/ImageRoundedStyle8" />
 
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/tvContent"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/_8sdp"
-            android:fontFamily="@font/cairo_regular"
-            android:textSize="@dimen/_10ssp"
-            android:padding="@dimen/_6sdp"
-            android:textColor="@color/black"
-            tools:text="دورة مكثفة في تعلم كيفية المحافظة علي البيئة من خطورة المخلفات الالكترونية وكيفية الاستفادة منها بشكل صحيح"
-            app:layout_constraintTop_toBottomOf="@id/tvTitle"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@id/ivCategory"
-            app:layout_constraintEnd_toEndOf="@id/ivCategory"/>
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/cairo_bold"
+                android:padding="@dimen/_3sdp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14ssp"
+                app:layout_constraintEnd_toEndOf="@id/ivCategory"
+                app:layout_constraintStart_toStartOf="@id/ivCategory"
+                app:layout_constraintTop_toBottomOf="@id/ivCategory" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvContent"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:fontFamily="@font/cairo_regular"
+                android:padding="@dimen/_6sdp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/ivCategory"
+                app:layout_constraintStart_toStartOf="@id/ivCategory"
+                app:layout_constraintTop_toBottomOf="@id/tvTitle" />
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
