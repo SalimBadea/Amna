@@ -1,6 +1,7 @@
 package com.salem.amna.data.di
 
 import com.salem.amna.data.apiservice.accountinfo.AccountInfoService
+import com.salem.amna.data.apiservice.addresses.AddressesServices
 import com.salem.amna.data.apiservice.auth.AuthService
 import com.salem.amna.data.apiservice.categories.CategoriesService
 import com.salem.amna.data.apiservice.general.GeneralService
@@ -48,12 +49,12 @@ class ApiModule {
 //    fun bindBlogService(retrofit: Retrofit): BlogService {
 //        return retrofit.create(BlogService::class.java)
 //    }
-//
-//    @Provides
-//    fun bindAddressService(retrofit: Retrofit): AddressService {
-//        return retrofit.create(AddressService::class.java)
-//    }
-//
+
+    @Provides
+    fun bindAddressService(retrofit: Retrofit): AddressesServices {
+        return retrofit.create(AddressesServices::class.java)
+    }
+
     @Provides
     fun bindAccountInfo(retrofit: Retrofit): AccountInfoService {
         return retrofit.create(AccountInfoService::class.java)

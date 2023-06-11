@@ -1,0 +1,23 @@
+package com.salem.amna.data.repository.remote.addresses
+
+import com.salem.amna.data.apiservice.addresses.AddressesServices
+import com.salem.amna.data.models.response.MainResponseModel
+import com.salem.amna.data.models.response.addresses.AddressesResponse
+import com.salem.amna.data.models.response.addresses.CitiesResponse
+import com.salem.amna.data.models.response.addresses.GovernoratesResponse
+import com.salem.amna.domain.repository.addresses.AddressesRepository
+import retrofit2.Response
+import javax.inject.Inject
+
+class AddressesRepositoryImpl @Inject constructor(
+    val api: AddressesServices
+): AddressesRepository {
+    override suspend fun getGovernorates(): Response<MainResponseModel<GovernoratesResponse>> =
+        api.getGovernorates()
+
+    override suspend fun getCities(governorateId: Int): Response<MainResponseModel<CitiesResponse>> =
+        api.getCities(governorateId)
+
+    override suspend fun getAddresses(): Response<MainResponseModel<AddressesResponse>> =
+        api.getAddresses()
+}
