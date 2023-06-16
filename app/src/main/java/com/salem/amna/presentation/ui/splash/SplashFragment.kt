@@ -47,11 +47,11 @@ class SplashFragment : Fragment() {
     override fun onStart() {
         super.onStart()
         lifecycleScope.launch {
-            delay(3500)
+            delay(2000)
             val extras = FragmentNavigatorExtras(
                 binding.imageView to "SplashTransition"
             )
-            replaceFragment(AccountTypeFragment(), R.id.fragmentContainerView, true)
+//            replaceFragment(AccountTypeFragment(), R.id.fragmentContainerView, true)
             if (localePreference.getLoginState() == true) {
                 startActivity(Intent(requireContext(), MainActivity::class.java))
                 requireActivity().finishAffinity()

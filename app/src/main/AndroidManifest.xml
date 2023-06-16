@@ -70,6 +70,10 @@
         </activity>
 
         <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="${MAPS_API_KEY}" />
+
+        <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"
             android:resource="@drawable/logo" />
         <!-- Set color used with incoming notification messages. This is used when no color is set for the incoming

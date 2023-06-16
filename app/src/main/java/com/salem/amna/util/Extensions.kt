@@ -4,11 +4,14 @@ import android.content.Context
 import android.content.Intent
 import android.content.res.ColorStateList
 import android.content.res.Resources
+import android.graphics.Bitmap
+import android.graphics.Canvas
 import android.graphics.drawable.Drawable
 import android.view.View
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.annotation.ColorRes
+import androidx.annotation.DrawableRes
 import androidx.annotation.IdRes
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
@@ -17,6 +20,8 @@ import androidx.core.widget.ImageViewCompat
 import androidx.fragment.app.Fragment
 import coil.load
 import coil.transform.RoundedCornersTransformation
+import com.google.android.gms.maps.model.BitmapDescriptor
+import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.gson.Gson
 import com.salem.amna.R
 import com.salem.amna.data.models.ErrorResponse
@@ -65,6 +70,7 @@ fun Fragment.replaceFragment(
     trans?.commit()
 }
 private var TOAST: Toast? = null
+
 fun toast(context: Context, s: Any) {
     if (TOAST != null)
         TOAST!!.cancel()
@@ -87,6 +93,17 @@ fun View.hideView() {
 
 fun View.invisibleView() {
     this.visibility = View.INVISIBLE
+}
+
+fun getBitmapDescriptorFromVector(context: Context, @DrawableRes vectorDrawableResourceId: Int): BitmapDescriptor? {
+
+    val vectorDrawable = ContextCompat.getDrawable(context, vectorDrawableResourceId)
+    val bitmap = Bitmap.createBitmap(vectorDrawable!!.intrinsicWidth, vectorDrawable.intrinsicHeight, Bitmap.Config.ARGB_8888)
+    val canvas = Canvas(bitmap)
+    vectorDrawable.setBounds(0, 0, canvas.width, canvas.height)
+    vectorDrawable.draw(canvas)
+
+    return BitmapDescriptorFactory.fromBitmap(bitmap)
 }
 
 fun ImageView.setTint(@ColorRes color: Int?) {

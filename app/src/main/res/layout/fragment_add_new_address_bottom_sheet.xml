@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/standard_bottom_sheet"
+    style="@style/BottomSheetMap"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:behavior_hideable="false"
+    app:behavior_peekHeight="@dimen/_102sdp"
+
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+    <!-- Drag handle for accessibility -->
+    <com.google.android.material.bottomsheet.BottomSheetDragHandleView
+        android:id="@+id/drag_handle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:fitsSystemWindows="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/_10sdp">
+
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/address"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_8sdp"
+                android:drawableStart="@drawable/ic_location"
+                android:drawablePadding="@dimen/_4sdp"
+                android:maxLines="5"
+                android:padding="@dimen/_4sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="address" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/area"
+                style="@style/TextInputLayoutStyleSpinnerNoBoarder"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_4sdp"
+                android:background="@drawable/bg_white"
+                android:cursorVisible="true"
+                android:focusable="false"
+                android:hint="@string/area"
+                app:layout_constraintEnd_toStartOf="@id/city"
+                app:layout_constraintStart_toStartOf="@+id/address"
+                app:layout_constraintTop_toBottomOf="@id/address">
+
+                <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                    android:id="@+id/area_field"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:inputType="none"
+                    tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/city"
+                style="@style/TextInputLayoutStyleSpinnerNoBoarder"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_4sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:background="@drawable/bg_white"
+                android:cursorVisible="true"
+                android:focusable="false"
+                android:hint="@string/city"
+                app:layout_constraintEnd_toEndOf="@id/address"
+                app:layout_constraintStart_toEndOf="@id/area"
+                app:layout_constraintTop_toBottomOf="@id/address">
+
+                <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                    android:id="@+id/city_field"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:inputType="none"
+                    tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/addButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:padding="@dimen/_6sdp"
+                android:gravity="center"
+                android:textSize="@dimen/_11ssp"
+                android:textColor="@color/white"
+                android:textAllCaps="false"
+                app:backgroundTint="@color/mainGreen"
+                app:fontFamily="@font/cairo_regular"
+                android:text="@string/save_to_addresses"
+                android:background="@drawable/bg_primery_btn"
+                android:layout_marginHorizontal="@dimen/_32sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/address"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/address"
+                app:layout_constraintTop_toBottomOf="@+id/area"
+                tools:ignore="TextContrastCheck" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>
+

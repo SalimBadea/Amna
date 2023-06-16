@@ -6,15 +6,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.salem.amna.R
 import com.salem.amna.base.BaseFragment
 import com.salem.amna.databinding.FragmentContactUsBinding
 import com.salem.amna.presentation.common.AppSharedViewModel
 import com.salem.amna.presentation.common.UiEffect
+import com.salem.amna.util.hideView
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -24,10 +27,17 @@ class ContactUsFragment : BaseFragment() {
         FragmentContactUsBinding.inflate(layoutInflater)
     }
 
+    private lateinit var navBar: BottomNavigationView
+    private lateinit var customBtnLayout: ConstraintLayout
+
     private val viewModel: ContactUsViewModel by viewModels()
     private val sharedViewModel: AppSharedViewModel by activityViewModels()
 
     override fun getRootView(): View {
+        navBar = requireActivity().findViewById(R.id.navView)
+        navBar.hideView()
+        customBtnLayout = requireActivity().findViewById(R.id.customBtnLayout)
+        customBtnLayout.hideView()
         return binding.root
     }
 

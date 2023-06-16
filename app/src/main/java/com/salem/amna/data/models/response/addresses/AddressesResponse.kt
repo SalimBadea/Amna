@@ -6,6 +6,6 @@ import com.salem.amna.data.models.common.AddressModel
 data class AddressesResponse (
 
     @field:SerializedName("addresses")
-    val addresses: MutableList<AddressModel>? = null,
+    val addresses: MutableList<AddressModel?>? = null,
 )
 

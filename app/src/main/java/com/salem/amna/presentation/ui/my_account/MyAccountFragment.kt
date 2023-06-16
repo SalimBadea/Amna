@@ -5,11 +5,13 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.salem.amna.R
 import com.salem.amna.base.BaseFragment
 import com.salem.amna.databinding.FragmentMyAccountBinding
@@ -19,6 +21,7 @@ import com.salem.amna.presentation.common.NavigationCommand
 import com.salem.amna.presentation.common.UiEffect
 import com.salem.amna.presentation.ui.auth.language.LanguageFragment
 import com.salem.amna.presentation.ui.my_account.about_us.AboutUsFragment
+import com.salem.amna.presentation.ui.my_account.addresses.AddressesFragment
 import com.salem.amna.presentation.ui.my_account.change_password.ChangePasswordFragment
 import com.salem.amna.presentation.ui.my_account.contact_us.ContactUsFragment
 import com.salem.amna.presentation.ui.my_account.edit_profile.EditProfileFragment
@@ -27,6 +30,7 @@ import com.salem.amna.presentation.ui.my_account.volunteering.VolunteeringFragme
 import com.salem.amna.util.ShareUtils.shareImage
 import com.salem.amna.util.loadImageFromInternet
 import com.salem.amna.util.replaceFragment
+import com.salem.amna.util.showView
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -36,10 +40,19 @@ class MyAccountFragment : BaseFragment() {
         FragmentMyAccountBinding.inflate(layoutInflater)
     }
 
+    private lateinit var navBar: BottomNavigationView
+    private lateinit var customBtnLayout: ConstraintLayout
+
     private val viewModel: AccountInfoViewModel by viewModels()
     private val sharedViewModel: AppSharedViewModel by activityViewModels()
 
-    override fun getRootView(): View = binding.root
+    override fun getRootView(): View {
+        navBar = requireActivity().findViewById(R.id.navView)
+        navBar.showView()
+        customBtnLayout = requireActivity().findViewById(R.id.customBtnLayout)
+        customBtnLayout.showView()
+        return binding.root
+    }
 
     override fun initVar() {
     }
@@ -52,6 +65,10 @@ class MyAccountFragment : BaseFragment() {
 
         binding.tvChangePassword.setOnClickListener {
             replaceFragment(ChangePasswordFragment(), R.id.fragmentContainer, true)
+        }
+
+        binding.tvAddresses.setOnClickListener {
+            replaceFragment(AddressesFragment(), R.id.fragmentContainer, true)
         }
 
         binding.tvLanguage.setOnClickListener {
@@ -156,9 +173,9 @@ class MyAccountFragment : BaseFragment() {
     companion object {
         @JvmStatic
         fun newInstance() = MyAccountFragment().apply {
-                arguments = Bundle().apply {
+            arguments = Bundle().apply {
 
-                }
             }
+        }
     }
 }

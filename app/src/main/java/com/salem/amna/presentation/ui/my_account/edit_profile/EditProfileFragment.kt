@@ -4,11 +4,13 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.salem.amna.R
 import com.salem.amna.base.BaseFragment
 import com.salem.amna.databinding.FragmentEditProfileBinding
@@ -18,6 +20,7 @@ import com.salem.amna.presentation.common.UiEffect
 import com.salem.amna.presentation.ui.my_account.AccountInfoEvent
 import com.salem.amna.presentation.ui.my_account.AccountInfoState
 import com.salem.amna.presentation.ui.my_account.AccountInfoViewModel
+import com.salem.amna.util.hideView
 import com.salem.amna.util.loadImageFromInternet
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -27,6 +30,9 @@ class EditProfileFragment : BaseFragment() {
     private val binding: FragmentEditProfileBinding by lazy {
         FragmentEditProfileBinding.inflate(layoutInflater)
     }
+
+    private lateinit var navBar: BottomNavigationView
+    private lateinit var customBtnLayout: ConstraintLayout
 
     private val viewModel: AccountInfoViewModel by viewModels()
     private val sharedViewModel: AppSharedViewModel by activityViewModels()
@@ -39,6 +45,10 @@ class EditProfileFragment : BaseFragment() {
     }
 
     override fun getRootView(): View {
+        navBar = requireActivity().findViewById(R.id.navView)
+        navBar.hideView()
+        customBtnLayout = requireActivity().findViewById(R.id.customBtnLayout)
+        customBtnLayout.hideView()
         return binding.root
     }
 

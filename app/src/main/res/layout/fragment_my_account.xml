@@ -118,6 +118,22 @@
                     android:drawablePadding="@dimen/_8sdp"/>
 
                 <TextView
+                    android:id="@+id/tvAddresses"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/cairo_regular"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:text="@string/addresses"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvName"
+                    app:drawableStartCompat="@drawable/ic_location"
+                    app:drawableEndCompat="@drawable/ic_arrow_forward"
+                    android:drawablePadding="@dimen/_8sdp"/>
+
+                <TextView
                     android:id="@+id/tvLanguage"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
