@@ -2,6 +2,7 @@ package com.salem.amna.presentation.common
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.salem.amna.data.models.common.AddressModel
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asSharedFlow
@@ -23,6 +24,9 @@ class AppSharedViewModel : ViewModel() {
     val storeId = _storeId.asStateFlow()
     private var _blogId = MutableStateFlow<Int?>(null)
     val blogId = _blogId.asStateFlow()
+
+    private var _address = MutableStateFlow<AddressModel?>(null)
+    val address  = _address.asStateFlow()
 
     private var _productId = MutableStateFlow<Int?>(null)
     val productId = _productId.asStateFlow()
@@ -73,6 +77,10 @@ class AppSharedViewModel : ViewModel() {
 
     fun setSearchQuery(query: String?) {
         viewModelScope.launch {  _searchQuery.emit( query)}
+    }
+
+    fun setAddress(address:AddressModel) {
+        _address.value = address
     }
 
     fun setProductId(id: Int?) {

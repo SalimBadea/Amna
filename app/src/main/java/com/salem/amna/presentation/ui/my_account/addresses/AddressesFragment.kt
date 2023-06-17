@@ -11,7 +11,6 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.imageview.ShapeableImageView
 import com.salem.amna.R
 import com.salem.amna.base.BaseFragment
 import com.salem.amna.data.models.common.AddressModel
@@ -21,6 +20,7 @@ import com.salem.amna.presentation.common.NavigationCommand
 import com.salem.amna.presentation.common.UiEffect
 import com.salem.amna.presentation.ui.my_account.addresses.adapter.AddressItemsAdapter
 import com.salem.amna.presentation.ui.my_account.addresses.add.AddAddressFragment
+import com.salem.amna.presentation.ui.my_account.addresses.update.UpdateAddressFragment
 import com.salem.amna.util.hideView
 import com.salem.amna.util.replaceFragment
 import com.salem.amna.util.showView
@@ -83,7 +83,7 @@ class AddressesFragment : BaseFragment() {
             viewModel.navigation.collect { navigation ->
                 when (navigation) {
                     NavigationCommand.Back -> {
-                        findNavController().popBackStack()
+                        baseActivity.onBackPressed()
                     }
                     is NavigationCommand.ToDirection -> {
                         findNavController().navigate(navigation.directions)
@@ -114,17 +114,12 @@ class AddressesFragment : BaseFragment() {
         val adapter = AddressItemsAdapter(requireContext(),userAddress)
         binding.rvAddresses.layoutManager = LinearLayoutManager(requireContext())
         binding.rvAddresses.adapter = adapter
-//        userAddress?.let {
-//            adapter.differ.submitList(it)
-//        }
-//        binding.rvAddresses.adapter = adapter
 
         Log.e("Addresses", "addresses List >> $userAddress")
-//        adapter.setOnAddressClickListener { adddress ->
-//            adddress.id?.let { id ->
-//                viewModel.onEvent(AddressEvent.MakeDefaultAddress(id))
-//            }
-//        }
+        adapter.setOnEditAddressClickListener { address ->
+            sharedViewModel.setAddress(address)
+            replaceFragment(UpdateAddressFragment(), R.id.fragmentContainer, true)
+        }
 
         adapter.setOnDeleteClickedListener { address ->
             viewModel.onEvent(AddressEvent.DeleteAddress(address.id))

@@ -10,6 +10,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.salem.amna.R
 import com.salem.amna.base.BaseFragment
 import com.salem.amna.databinding.FragmentHomeBinding
+import com.salem.amna.presentation.ui.cart.CartFragment
 import com.salem.amna.presentation.ui.earnings.NotificationsFragment
 import com.salem.amna.util.hideView
 import com.salem.amna.util.replaceFragment
@@ -35,6 +36,10 @@ class   HomeFragment : BaseFragment() {
     }
 
     override fun initVar() {
+
+        binding.toolbar.cartImage.setOnClickListener {
+            replaceFragment(CartFragment(), R.id.fragmentContainer, true)
+        }
     }
 
     override fun onEvent() {

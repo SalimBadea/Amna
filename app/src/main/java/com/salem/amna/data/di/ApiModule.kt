@@ -1,8 +1,10 @@
 package com.salem.amna.data.di
 
 import com.salem.amna.data.apiservice.accountinfo.AccountInfoService
+import com.salem.amna.data.apiservice.add_product.AddProductServices
 import com.salem.amna.data.apiservice.addresses.AddressesServices
 import com.salem.amna.data.apiservice.auth.AuthService
+import com.salem.amna.data.apiservice.cart.CartServices
 import com.salem.amna.data.apiservice.categories.CategoriesService
 import com.salem.amna.data.apiservice.general.GeneralService
 import dagger.Module
@@ -24,31 +26,17 @@ class ApiModule {
 //    fun bindHomeService(retrofit: Retrofit): HomeService {
 //        return retrofit.create(HomeService::class.java)
 //    }
-//
-//    @Provides
-//    fun bindStoresService(retrofit: Retrofit): StoresService {
-//        return retrofit.create(StoresService::class.java)
-//    }
-//
+
     @Provides
     fun bindGeneralService(retrofit: Retrofit): GeneralService {
         return retrofit.create(GeneralService::class.java)
     }
-//
-//    @Provides
-//    fun bindSearchService(retrofit: Retrofit): SearchService {
-//        return retrofit.create(SearchService::class.java)
-//    }
-//
-//    @Provides
-//    fun bindFavoriteService(retrofit: Retrofit): FavoriteService {
-//        return retrofit.create(FavoriteService::class.java)
-//    }
-//
-//    @Provides
-//    fun bindBlogService(retrofit: Retrofit): BlogService {
-//        return retrofit.create(BlogService::class.java)
-//    }
+
+    @Provides
+    fun bindSearchService(retrofit: Retrofit): AddProductServices {
+        return retrofit.create(AddProductServices::class.java)
+    }
+
 
     @Provides
     fun bindAddressService(retrofit: Retrofit): AddressesServices {
@@ -69,12 +57,12 @@ class ApiModule {
 //    fun bindProductService(retrofit: Retrofit): ProductService {
 //        return retrofit.create(ProductService::class.java)
 //    }
-//
-//    @Provides
-//    fun bindCartService(retrofit: Retrofit): CartService {
-//        return retrofit.create(CartService::class.java)
-//    }
-//
+
+    @Provides
+    fun bindCartService(retrofit: Retrofit): CartServices {
+        return retrofit.create(CartServices::class.java)
+    }
+
 //    @Provides
 //    fun bindOrderService(retrofit: Retrofit): OrderService {
 //        return retrofit.create(OrderService::class.java)

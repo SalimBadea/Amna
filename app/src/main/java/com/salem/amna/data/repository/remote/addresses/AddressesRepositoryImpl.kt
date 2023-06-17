@@ -26,6 +26,12 @@ class AddressesRepositoryImpl @Inject constructor(
     override suspend fun addNewAddress(addressBody: AddressBody): Response<MainResponseModel<ContactUsResponse>> =
         api.AddNewAddress(addressBody)
 
+    override suspend fun updateAddress(
+        addressId: Int,
+        addressBody: AddressBody
+    ): Response<MainResponseModel<ContactUsResponse>> =
+        api.UpdateAddress(addressId, addressBody)
+
     override suspend fun deleteAddress(
         addressId: Int,
         method: String

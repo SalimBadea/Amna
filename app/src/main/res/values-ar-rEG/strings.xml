@@ -113,5 +113,18 @@
     <string name="save_to_addresses">حفظ العنوان</string>
     <string name="search">بحث</string>
 
+    <string name="add_Product">اضافة مخلف</string>
+    <string name="cart">العربة</string>
+    <string name="get_it_now">احصل عليها الآن</string>
+    <string name="voucher">قسيمة</string>
+    <string name="order_summary">ملخص الطلب</string>
+    <string name="items_count">عدد العناصر</string>
+    <string name="totla_points">اجمالي النقاط</string>
+    <string name="voucher_percentage">نسبة القسيمة</string>
+    <string name="gift_type">نوع الهدية</string>
+    <string name="camera">الكاميرا</string>
+    <string name="gallery">الاستديو</string>
+    <string name="image_attched">تم إرفاق صورة</string>
+
 
 </resources>

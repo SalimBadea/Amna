@@ -18,6 +18,8 @@ interface AddressesRepository {
 
     suspend fun addNewAddress(addressBody: AddressBody): Response<MainResponseModel<ContactUsResponse>>
 
+    suspend fun updateAddress(addressId: Int, addressBody: AddressBody): Response<MainResponseModel<ContactUsResponse>>
+
     suspend fun deleteAddress(addressId:Int, method: String): Response<MainResponseModel<ContactUsResponse>>
 
 }

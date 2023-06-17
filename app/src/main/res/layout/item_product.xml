@@ -36,29 +36,76 @@
                 app:shapeAppearance="@style/ImageRoundedStyle8" />
 
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tvPercent"
+                android:id="@+id/tvProduct"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/cairo_bold"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_11ssp"
-                android:layout_marginStart="@dimen/_4sdp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp"
                 app:layout_constraintStart_toEndOf="@id/ivProduct"
-                app:layout_constraintTop_toTopOf="@id/ivProduct"
+                app:layout_constraintTop_toTopOf="parent"
                 tools:text="موبايل سامسونج A31 هدية" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/cairo_bold"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:textColor="@color/lightGray1"
+                android:textSize="@dimen/_10ssp"
+                android:layout_marginStart="@dimen/_8sdp"
+                app:layout_constraintStart_toEndOf="@id/ivProduct"
+                app:layout_constraintTop_toBottomOf="@id/tvProduct"
+                tools:text="الكترونيات" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/tvContent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_4sdp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
                 android:fontFamily="@font/cairo_regular"
                 android:textColor="@color/mainGreen"
                 android:textSize="@dimen/_10ssp"
-                app:layout_constraintBottom_toBottomOf="@id/ivProduct"
+                android:text="@string/addresses"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@id/ivProduct"
-                app:layout_constraintTop_toBottomOf="@id/tvPercent"
+                app:layout_constraintTop_toBottomOf="@id/tvCategory"
                 tools:text="@{@string/product_points(model.points, @string/points_worth)}" />
+
+            <ImageButton
+                android:id="@+id/ibAdd"
+                android:layout_width="@dimen/_22sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:background="@drawable/bg_primery_btn"
+                android:src="@drawable/ic_add"
+                android:padding="@dimen/_4sdp"
+                android:scaleType="centerCrop"
+                android:visibility="invisible"
+                tools:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_margin="@dimen/_8sdp"
+                tools:ignore="ContentDescription" />
+
+            <ImageButton
+                android:id="@+id/ibDelete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_delete"
+                android:padding="@dimen/_4sdp"
+                android:scaleType="centerCrop"
+                android:visibility="invisible"
+                tools:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_margin="@dimen/_8sdp"
+                tools:ignore="ContentDescription" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

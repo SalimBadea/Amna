@@ -100,7 +100,7 @@
     <string name="points_worth">points</string>
     <string name="there_are_no_addresses_for_you">There are no addresses for you</string>
 
-    
+
     <string name="product_points" translatable="false">%s %s</string>
 
     <string name="the_email_can_not_be_blank">The email can\'t be blank</string>
@@ -120,6 +120,23 @@
     <string name="city">City</string>
     <string name="save_to_addresses">Save Address</string>
     <string name="search">Search</string>
+    <string name="add_Product">Add Product</string>
+    <string name="cart">Cart</string>
+    <string name="get_it_now">Get It Now</string>
+    <string name="voucher">Voucher</string>
+    <string name="order_summary">Order Summary</string>
+    <string name="items_count">Items Count</string>
+    <string name="totla_points">Totla Points</string>
+    <string name="voucher_percentage">Voucher Percentage</string>
+    <string name="gift_type">Gift Type</string>
+    <string name="camera">Camera</string>
+    <string name="gallery">Gallary</string>
+    <string name="image_attched">Photo Attached</string>
+    <string name="permission_error">Permission Refused</string>
+    <string name="brand">Brand</string>
+    <string name="product_status">Product Status</string>
+    <string name="product_desc">Product Description</string>
+    <string name="save_and_add"><![CDATA[Save & Add]]></string>
 
 
 </resources>

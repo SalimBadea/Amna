@@ -1,11 +1,14 @@
 package com.salem.amna.data.models.common
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
 
+@Parcelize
 data class CategoryItemModel(
 
     @SerializedName("id")
-    val id: Int? = null,
+    val id: Int,
 
     @SerializedName("name")
     val name: String? = null,
@@ -19,4 +22,4 @@ data class CategoryItemModel(
     @SerializedName("category")
     val category: CategoriesModel? = null,
 
-)
+):Parcelable

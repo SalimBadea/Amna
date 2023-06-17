@@ -69,18 +69,11 @@ fun Fragment.replaceFragment(
 
     trans?.commit()
 }
-private var TOAST: Toast? = null
 
-fun toast(context: Context, s: Any) {
-    if (TOAST != null)
-        TOAST!!.cancel()
-
-    if (s is String)
-        TOAST = Toast.makeText(context, s.toString(), Toast.LENGTH_SHORT)
-    else if (s is Int)
-        TOAST = Toast.makeText(context, s.toInt(), Toast.LENGTH_SHORT)
-
-    TOAST!!.show()
+fun Fragment.showToast(message: String?) {
+    activity?.let {
+        Toast.makeText(it, message, Toast.LENGTH_LONG).show()
+    }
 }
 
 fun View.showView() {

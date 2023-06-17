@@ -30,6 +30,12 @@ interface AddressesServices {
     ): Response<MainResponseModel<ContactUsResponse>>
 
     @POST("addresses/{id}")
+    suspend fun UpdateAddress(
+        @Path("id") addressId: Int,
+        @Body addressBody: AddressBody
+    ): Response<MainResponseModel<ContactUsResponse>>
+
+    @POST("addresses/{id}")
     suspend fun deleteAddress(
         @Path("id") addressId: Int,
         @Query("_method") method: String = "DELETE"

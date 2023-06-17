@@ -6,6 +6,7 @@ import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.salem.amna.R
@@ -13,13 +14,15 @@ import com.salem.amna.base.BaseFragment
 import com.salem.amna.data.models.common.CategoriesModel
 import com.salem.amna.data.models.common.CategoryItemModel
 import com.salem.amna.databinding.FragmentCategoriesBinding
+import com.salem.amna.presentation.common.NavigationCommand
 import com.salem.amna.presentation.common.UiEffect
+import com.salem.amna.presentation.ui.add_product.AddProductFragment
 import com.salem.amna.util.hideView
+import com.salem.amna.util.replaceFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class CategoriesFragment : BaseFragment(), CategoriesAdapter.OnItemClick,
-    ProductsAdapter.OnItemClick {
+class CategoriesFragment : BaseFragment(), CategoriesAdapter.OnItemClick {
 
     private val binding: FragmentCategoriesBinding by lazy {
         FragmentCategoriesBinding.inflate(layoutInflater)
@@ -35,7 +38,7 @@ class CategoriesFragment : BaseFragment(), CategoriesAdapter.OnItemClick,
     }
 
     private val productsAdapter by lazy {
-        ProductsAdapter(requireContext(), this)
+        ProductsAdapter(requireContext())
     }
 
     override fun getRootView(): View {
@@ -89,6 +92,10 @@ class CategoriesFragment : BaseFragment(), CategoriesAdapter.OnItemClick,
             layoutManager = LinearLayoutManager(requireContext())
             adapter = productsAdapter
         }
+
+        productsAdapter.setOnAddClickedListener {
+            replaceFragment(AddProductFragment.newInstance(it), R.id.fragmentContainer, true)
+        }
     }
 
     private fun initData(state: CategoriesState) {
@@ -104,6 +111,20 @@ class CategoriesFragment : BaseFragment(), CategoriesAdapter.OnItemClick,
     }
 
     override fun navigate() {
+        lifecycleScope.launchWhenStarted {
+            viewModel.navigation.collect { navigation ->
+                when (navigation) {
+                    NavigationCommand.Back -> {
+                        baseActivity.onBackPressed()
+                    }
+                    is NavigationCommand.ToDirection -> {
+                        findNavController().navigate(navigation.directions)
+                    }
+                    else -> {}
+                }
+
+            }
+        }
     }
 
     override fun showEffect() {
@@ -132,10 +153,6 @@ class CategoriesFragment : BaseFragment(), CategoriesAdapter.OnItemClick,
             arguments = Bundle().apply {
             }
         }
-    }
-
-    override fun orderClicked(item: CategoryItemModel) {
-
     }
 
 

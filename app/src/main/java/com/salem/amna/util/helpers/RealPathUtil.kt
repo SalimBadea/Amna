@@ -1,4 +1,4 @@
-package com.salem.amna.util
+package com.salem.amna.util.helpers
 
 import android.annotation.SuppressLint
 import android.content.ContentUris

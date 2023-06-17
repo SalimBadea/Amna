@@ -19,5 +19,7 @@ data class AddressBody(
 	@field:SerializedName("address")
 	val address: String? = null,
 
+	val _method: String? = null,
+
 
 )

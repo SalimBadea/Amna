@@ -1,7 +1,10 @@
 package com.salem.amna.data.models.common
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
 
+@Parcelize
 data class CategoriesModel(
 
     @SerializedName("id")
@@ -15,4 +18,4 @@ data class CategoriesModel(
 
     @SerializedName("image")
     val image: String? = null,
-)
+):Parcelable

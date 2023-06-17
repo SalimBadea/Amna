@@ -6,9 +6,8 @@ import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.salem.amna.R
-import com.salem.amna.data.models.common.CategoriesModel
+import com.salem.amna.data.models.common.AddressModel
 import com.salem.amna.data.models.common.CategoryItemModel
-import com.salem.amna.databinding.ItemCategoryBinding
 import com.salem.amna.databinding.ItemProductBinding
 import com.salem.amna.util.loadImageFromInternet
 
@@ -17,6 +16,8 @@ class ProductsAdapter(
     private var itemClicked: OnItemClick? = null
 ) :
     RecyclerView.Adapter<ProductsAdapter.OrderViewHolder>() {
+
+    private var onAddClicked: ((item: CategoryItemModel) -> Unit)? = null
 
     var list: MutableList<CategoryItemModel> = arrayListOf()
         set(newlist) {
@@ -34,11 +35,12 @@ class ProductsAdapter(
                 ContextCompat.getDrawable(context, R.drawable.logo)
             )
 
-            binding.tvPercent.text = "${model.name}"
-//            binding.tvContent.text = "${model.points}"
+            binding.tvProduct.text = "${model.name}"
+            binding.tvCategory.text = "${model.category?.name}"
+            binding.tvContent.text = "${model.points}"
 
-            binding.root.setOnClickListener {
-                itemClicked?.orderClicked(model)
+            binding.ibAdd.setOnClickListener {
+                onAddClicked?.let { it1 -> it1(model) }
             }
         }
     }
@@ -56,12 +58,16 @@ class ProductsAdapter(
         return list.size
     }
 
+    fun setOnAddClickedListener(onAddClicked: (item: CategoryItemModel) -> Unit) {
+        this.onAddClicked = onAddClicked
+    }
+
     override fun onBindViewHolder(holder: OrderViewHolder, position: Int) {
         val model = list[position]
         holder.bindDataToView(model)
     }
 
     interface OnItemClick {
-        fun orderClicked(item: CategoryItemModel)
+        fun onAddClicked(item: CategoryItemModel)
     }
 }

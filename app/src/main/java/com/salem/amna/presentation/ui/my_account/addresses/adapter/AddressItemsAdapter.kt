@@ -11,14 +11,14 @@ import com.salem.amna.databinding.ItemAddressBinding
 
 class AddressItemsAdapter(private val mContext: Context, private val mList: MutableList<AddressModel?>) :
     RecyclerView.Adapter<AddressItemsViewHolder>() {
-    private var onAddressClickListener: ((item: AddressModel) -> Unit)? = null
+    private var onEditAddressClickListener: ((item: AddressModel) -> Unit)? = null
     private var onDeleteClicked: ((item: AddressModel) -> Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AddressItemsViewHolder {
         val binding =
             ItemAddressBinding.inflate(LayoutInflater.from(parent.context), parent, false)
 
-        return AddressItemsViewHolder(binding,parent.context, onAddressClickListener,onDeleteClicked)
+        return AddressItemsViewHolder(binding,parent.context, onEditAddressClickListener,onDeleteClicked)
     }
 
     override fun onBindViewHolder(holder: AddressItemsViewHolder, position: Int) {
@@ -36,8 +36,8 @@ class AddressItemsAdapter(private val mContext: Context, private val mList: Muta
         notifyDataSetChanged()
     }
 
-    fun setOnAddressClickListener(onAddressClickListener: (item: AddressModel) -> Unit) {
-        this.onAddressClickListener = onAddressClickListener
+    fun setOnEditAddressClickListener(onEditAddressClickListener: (item: AddressModel) -> Unit) {
+        this.onEditAddressClickListener = onEditAddressClickListener
     }
     fun setOnDeleteClickedListener(onDeleteClicked: (item: AddressModel) -> Unit) {
         this.onDeleteClicked = onDeleteClicked
