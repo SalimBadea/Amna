@@ -139,6 +139,9 @@
     <string name="save_and_add"><![CDATA[Save & Add]]></string>
     <string name="product_added_to_cart">Product Added To Cart Successfully</string>
     <string name="new_product">New Product</string>
+    <string name="please_add_one_image_at_least">Please add one image at least</string>
+    <string name="please_select_product_status">Please select product status</string>
+    <string name="please_select_product_brand">Please select product brand</string>
 
 
 </resources>

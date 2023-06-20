@@ -133,7 +133,9 @@
     <string name="save_and_add">حفظ و اضافة</string>
     <string name="product_added_to_cart">تم اضافة المخلف الي العربة بنجاح</string>
     <string name="new_product">مخلف جديد</string>
-
+    <string name="please_add_one_image_at_least">برجاء اضافة صورة واحدة علي الاقل</string>
+    <string name="please_select_product_status">برجاء تحديد حالة المخلف</string>
+    <string name="please_select_product_brand">برجاء تحديد العلامة التجارية للمخلف</string>
 
 
 </resources>

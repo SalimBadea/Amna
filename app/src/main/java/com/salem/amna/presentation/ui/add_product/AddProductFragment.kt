@@ -113,6 +113,7 @@ class AddProductFragment : BaseFragment(), ItemImagesAdapter.OnClick {
         binding.saveBtn.setOnClickListener {
             if (brandId != 0) {
                 if (statusId != 0) {
+                    if (itemImages != null){
                     viewModel.onEvent(
                         AddProductEvent.AddItem(
                             product.id,
@@ -123,11 +124,14 @@ class AddProductFragment : BaseFragment(), ItemImagesAdapter.OnClick {
                             statusId
                         )
                     )
+                    }else{
+                        showToast(getString(R.string.please_add_one_image_at_least))
+                    }
                 }else{
-                    showToast("Please select product status")
+                    showToast(getString(R.string.please_select_product_status))
                 }
             }else{
-                showToast("Please select product brand")
+                showToast(getString(R.string.please_select_product_brand))
             }
         }
 
