@@ -54,7 +54,7 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvImages"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="@dimen/_95sdp"
         android:layout_marginHorizontal="@dimen/_8sdp"
         android:orientation="horizontal"

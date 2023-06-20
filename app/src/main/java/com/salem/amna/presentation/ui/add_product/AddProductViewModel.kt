@@ -3,6 +3,7 @@ package com.salem.amna.presentation.ui.add_product
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.salem.amna.domain.use_case.add_product.AddItemUseCase
 import com.salem.amna.domain.use_case.add_product.GetBrandsUseCase
 import com.salem.amna.domain.use_case.add_product.GetStatusesUseCase
 import com.salem.amna.presentation.common.NavigationCommand
@@ -14,12 +15,14 @@ import com.salem.amna.util.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.*
+import okhttp3.MultipartBody
 import javax.inject.Inject
 
 @HiltViewModel
 class AddProductViewModel @Inject constructor(
     private val getBrandsUseCase: GetBrandsUseCase,
-    private val getStatusesUseCase: GetStatusesUseCase
+    private val getStatusesUseCase: GetStatusesUseCase,
+    private val addItemUseCase: AddItemUseCase
 ): ViewModel()  {
 
     private val TAG = "AddProductViewModel"
@@ -41,6 +44,10 @@ class AddProductViewModel @Inject constructor(
             }
             is AddProductEvent.StatusesChanged -> {
                 _uiState.value = _uiState.value.copy(statusId = event.statusId)
+            }
+
+            is AddProductEvent.AddItem -> {
+                addItem(event.itemId, event.qty, event.images, event.brandId, event.description, event.statusId)
             }
             else -> {}
         }
@@ -80,6 +87,28 @@ class AddProductViewModel @Inject constructor(
                 is Resource.Error -> {
                     val message = result.message ?: "An unexpected error occurred"
                     Log.e(TAG, "AccountInfo: error message $message")
+                    _effect.send(UiEffect.ShowToast(message))
+                    _uiState.value.copy(error = message, isLoading = false, isSuccess = false)
+                }
+                is Resource.Loading -> {
+                    _uiState.value.copy(isLoading = true, error = "", isSuccess = false)
+                }
+            }
+        }.launchIn(viewModelScope)
+    }
+
+    private fun addItem(itemId: Int, qty: Int, images: MutableList<MultipartBody.Part>, brandId: Int, description: String, statusId: Int) {
+        addItemUseCase(itemId, qty, images, brandId, description, statusId).onEach { result ->
+            _uiState.value = when (result) {
+                is Resource.Success -> {
+                    _uiState.value.copy(
+                        isAdded = result.data != null,
+                        isLoading = false,
+                    )
+                }
+                is Resource.Error -> {
+                    val message = result.message ?: "An unexpected error occurred"
+                    Log.e(TAG, "Address: error message $message")
                     _effect.send(UiEffect.ShowToast(message))
                     _uiState.value.copy(error = message, isLoading = false, isSuccess = false)
                 }

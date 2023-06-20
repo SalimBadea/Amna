@@ -126,5 +126,14 @@
     <string name="gallery">الاستديو</string>
     <string name="image_attched">تم إرفاق صورة</string>
 
+    <string name="permission_error">Permission Refused</string>
+    <string name="brand">العلامة التجارية</string>
+    <string name="product_status">حالة المنتج</string>
+    <string name="product_desc">وصف المنتج</string>
+    <string name="save_and_add">حفظ و اضافة</string>
+    <string name="product_added_to_cart">تم اضافة المخلف الي العربة بنجاح</string>
+    <string name="new_product">مخلف جديد</string>
+
+
 
 </resources>

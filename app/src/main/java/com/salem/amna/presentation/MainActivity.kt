@@ -10,6 +10,7 @@ import com.salem.amna.R
 import com.salem.amna.base.BaseActivity
 import com.salem.amna.data.repository.local.preference.LocalePreference
 import com.salem.amna.databinding.ActivityMainBinding
+import com.salem.amna.presentation.ui.cart.CartFragment
 import com.salem.amna.presentation.ui.categories.CategoriesFragment
 import com.salem.amna.presentation.ui.courses.CoursesFragment
 import com.salem.amna.presentation.ui.earnings.MyEarningsFragment
@@ -48,6 +49,10 @@ class MainActivity : BaseActivity() {
         navPosition = intent.getIntExtra("position", 0)
         init()
         when (navPosition) {
+
+            5 -> {
+                replaceFragment(CartFragment(), R.id.fragmentContainer, false)
+            }
 
             4 -> {
                 replaceFragment(MyAccountFragment(), R.id.fragmentContainer, false)
@@ -95,12 +100,7 @@ class MainActivity : BaseActivity() {
                     replaceFragment(CoursesFragment(), R.id.fragmentContainer, true)
                 }
                 R.id.navigation_add -> {
-                    GlobalScope.launch {
-                        withContext(Dispatchers.Default) {
-                            if (animate())
-                                gotoDeliveryItems()
-                        }
-                    }
+                    replaceFragment(CategoriesFragment(), R.id.fragmentContainer, true)
                 }
 
                 R.id.navigation_earnings -> {
@@ -116,15 +116,13 @@ class MainActivity : BaseActivity() {
         }
 
         binding.btnAddCustom.setOnClickListener {
-//            if (token.isNullOrEmpty()) {
-//                showToast(getString(R.string.login_note_message))
-//            } else
-                GlobalScope.launch {
-                    withContext(Dispatchers.Default) {
-                        if (animate())
-                            gotoDeliveryItems()
-                    }
-                }
+            replaceFragment(CategoriesFragment(), R.id.fragmentContainer, true)
+//        GlobalScope.launch {
+//                withContext(Dispatchers.Default) {
+//                    if (animate())
+//                        gotoDeliveryItems()
+//                }
+//            }
         }
     }
 

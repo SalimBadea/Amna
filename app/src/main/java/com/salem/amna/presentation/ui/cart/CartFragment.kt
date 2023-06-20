@@ -1,5 +1,6 @@
 package com.salem.amna.presentation.ui.cart
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -16,6 +17,7 @@ import com.salem.amna.R
 import com.salem.amna.base.BaseFragment
 import com.salem.amna.data.models.common.CategoryItemModel
 import com.salem.amna.databinding.FragmentCartBinding
+import com.salem.amna.presentation.MainActivity
 import com.salem.amna.presentation.common.NavigationCommand
 import com.salem.amna.presentation.common.UiEffect
 import com.salem.amna.presentation.ui.cart.adapter.CartItemAdapter
@@ -29,7 +31,7 @@ class CartFragment : BaseFragment() {
         FragmentCartBinding.inflate(layoutInflater)
     }
 
-    private val viewModel : CartViewModel by viewModels()
+    private val viewModel: CartViewModel by viewModels()
 
     private lateinit var navBar: BottomNavigationView
     private lateinit var customBtnLayout: ConstraintLayout
@@ -49,14 +51,27 @@ class CartFragment : BaseFragment() {
         binding.backIv.setOnClickListener {
             baseActivity.onBackPressed()
         }
+
+        binding.confirmBtn.setOnClickListener {
+            viewModel.onEvent(CartEvent.Checkout(1, 1))
+        }
     }
 
     override fun render() {
         lifecycleScope.launchWhenStarted {
             viewModel.uiState.collect { state ->
-               if (state.isSuccess) {
+                if (state.isSuccess) {
                     initData(state)
                     hideLoadingDialog()
+                } else if (state.isConfirmed) {
+                    requireActivity().finishAffinity()
+                    requireContext().startActivity(
+                        Intent(
+                            requireContext(),
+                            MainActivity::class.java
+                        ).putExtra("position", 0)
+                    )
+                    showLoadingDialog()
                 } else if (state.isLoading) {
                     showLoadingDialog()
                 } else if (state.error.isNotBlank()) {
@@ -118,6 +133,7 @@ class CartFragment : BaseFragment() {
             }
         }
     }
+
     companion object {
 
         @JvmStatic

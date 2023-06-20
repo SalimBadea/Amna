@@ -137,6 +137,8 @@
     <string name="product_status">Product Status</string>
     <string name="product_desc">Product Description</string>
     <string name="save_and_add"><![CDATA[Save & Add]]></string>
+    <string name="product_added_to_cart">Product Added To Cart Successfully</string>
+    <string name="new_product">New Product</string>
 
 
 </resources>

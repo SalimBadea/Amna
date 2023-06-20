@@ -7,6 +7,7 @@ data class AddProductState(
     val isLoading: Boolean = false,
     val isSuccess: Boolean = false,
     val isSuccessful: Boolean = false,
+    val isAdded: Boolean = false,
     val error: String = "",
     val resultBrands: BrandsResponse? = null,
     val resultStatuses: StatusesResponse? = null,

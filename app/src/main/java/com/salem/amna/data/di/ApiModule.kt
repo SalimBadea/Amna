@@ -7,6 +7,7 @@ import com.salem.amna.data.apiservice.auth.AuthService
 import com.salem.amna.data.apiservice.cart.CartServices
 import com.salem.amna.data.apiservice.categories.CategoriesService
 import com.salem.amna.data.apiservice.general.GeneralService
+import com.salem.amna.data.apiservice.home.HomeServices
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -22,10 +23,10 @@ class ApiModule {
         return retrofit.create(AuthService::class.java)
     }
 
-//    @Provides
-//    fun bindHomeService(retrofit: Retrofit): HomeService {
-//        return retrofit.create(HomeService::class.java)
-//    }
+    @Provides
+    fun bindHomeService(retrofit: Retrofit): HomeServices {
+        return retrofit.create(HomeServices::class.java)
+    }
 
     @Provides
     fun bindGeneralService(retrofit: Retrofit): GeneralService {

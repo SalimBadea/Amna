@@ -167,7 +167,7 @@ class ImageDialogFragment : BottomSheetDialogFragment() {
         }
 
         override fun permissionRefused() {
-            showToast(getString(R.string.permission_error))
+//            showToast(getString(R.string.permission_error))
         }
 
     }
@@ -177,7 +177,7 @@ class ImageDialogFragment : BottomSheetDialogFragment() {
         }
 
         override fun permissionRefused() {
-            showToast(getString(R.string.permission_error))
+//            showToast(getString(R.string.permission_error))
         }
 
     }

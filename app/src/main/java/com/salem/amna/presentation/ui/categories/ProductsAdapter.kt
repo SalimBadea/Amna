@@ -2,6 +2,7 @@ package com.salem.amna.presentation.ui.categories
 
 import android.content.Context
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
@@ -38,6 +39,8 @@ class ProductsAdapter(
             binding.tvProduct.text = "${model.name}"
             binding.tvCategory.text = "${model.category?.name}"
             binding.tvContent.text = "${model.points}"
+
+            binding.ibAdd.visibility = View.VISIBLE
 
             binding.ibAdd.setOnClickListener {
                 onAddClicked?.let { it1 -> it1(model) }
