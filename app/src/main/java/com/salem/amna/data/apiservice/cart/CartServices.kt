@@ -16,8 +16,7 @@ interface CartServices {
 
     @GET("cart")
     suspend fun getCart(): Response<MainResponseModel<CartResponse>>
-
-    @Multipart
+    
     @POST("checkout")
     suspend fun confirmCart(
         @Query("where_to_deliver") where_to_deliver: Int,

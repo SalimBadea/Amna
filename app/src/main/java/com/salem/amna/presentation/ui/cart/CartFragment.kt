@@ -53,7 +53,7 @@ class CartFragment : BaseFragment() {
         }
 
         binding.confirmBtn.setOnClickListener {
-            viewModel.onEvent(CartEvent.Checkout(1, 1))
+            viewModel.onEvent(CartEvent.Checkout(1, 3))
         }
     }
 
