@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="@dimen/_4sdp"
+    android:layout_margin="@dimen/_6sdp"
     app:cardCornerRadius="@dimen/_6sdp"
     app:cardElevation="@dimen/_4sdp">
 
@@ -70,9 +70,11 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/_8sdp"
             android:layout_marginTop="@dimen/_8sdp"
-            app:layout_constraintEnd_toEndOf="@id/tvOrderStatus"
-            app:layout_constraintStart_toStartOf="@id/ivReUsed"
-            app:layout_constraintTop_toBottomOf="@id/ivReUsed">
+            android:layout_marginBottom="@dimen/_4sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivReUsed"
+            app:layout_constraintBottom_toBottomOf="parent">
 
             <ImageView
                 android:id="@+id/ivPending"
@@ -80,7 +82,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_8sdp"
                 android:layout_marginTop="@dimen/_8sdp"
-                android:src="@drawable/ic_radio_checked"
+                android:src="@drawable/ic_radio_unchecked"
                 app:layout_constraintEnd_toStartOf="@id/pendingView"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -89,7 +91,7 @@
                 android:id="@+id/pendingView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:background="@drawable/view_background_green"
+                android:background="@drawable/view_background_gray"
                 app:layout_constraintBottom_toBottomOf="@id/ivPending"
                 app:layout_constraintEnd_toStartOf="@id/ivAccepted"
                 app:layout_constraintStart_toEndOf="@id/ivPending"
@@ -114,7 +116,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_8sdp"
-                android:src="@drawable/ic_radio_semi_checked"
+                android:src="@drawable/ic_radio_unchecked"
                 app:layout_constraintEnd_toStartOf="@id/acceptView"
                 app:layout_constraintStart_toEndOf="@id/pendingView"
                 app:layout_constraintTop_toTopOf="parent" />
