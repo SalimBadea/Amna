@@ -1,4 +1,4 @@
-package com.salem.amna.presentation.ui.categories
+package com.salem.amna.presentation.ui.courses
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -7,42 +7,42 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.salem.amna.R
 import com.salem.amna.data.models.common.CategoriesModel
+import com.salem.amna.data.models.common.CoursesModel
 import com.salem.amna.databinding.ItemCategoryBinding
+import com.salem.amna.databinding.ItemCourseBinding
 import com.salem.amna.util.loadImageFromInternet
 
-class CategoriesAdapter(
+class CoursesAdapter(
     private var context: Context,
-    private var itemClicked: OnItemClick? = null
+    private var itemShowClicked: OnItemClick? = null
 ) :
-    RecyclerView.Adapter<CategoriesAdapter.OrderViewHolder>() {
+    RecyclerView.Adapter<CoursesAdapter.OrderViewHolder>() {
 
-    var list: MutableList<CategoriesModel> = arrayListOf()
+    var list: MutableList<CoursesModel> = arrayListOf()
         set(newlist) {
             field = newlist
             notifyDataSetChanged()
         }
 
-    inner class OrderViewHolder(var binding: ItemCategoryBinding) :
+    inner class OrderViewHolder(var binding: ItemCourseBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bindDataToView(model: CategoriesModel) {
-            binding.model = model
+        fun bindDataToView(model: CoursesModel) {
 
-            binding.ivCategory.loadImageFromInternet(
+            binding.ivCourse.loadImageFromInternet(
                 model.image,
                 ContextCompat.getDrawable(context, R.drawable.logo)
             )
 
-            binding.tvTitle.text = "${model.name}"
-            binding.tvContent.text = "${model.description}"
+            binding.tvTitle.text = "${model.title}"
 
-            binding.root.setOnClickListener {
-                itemClicked?.orderClicked(model)
+            binding.watchBtn.setOnClickListener {
+                itemShowClicked?.itemShowClicked(model)
             }
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OrderViewHolder {
-        val binding = ItemCategoryBinding.inflate(
+        val binding = ItemCourseBinding.inflate(
             LayoutInflater.from(context),
             parent,
             false
@@ -60,6 +60,6 @@ class CategoriesAdapter(
     }
 
     interface OnItemClick {
-        fun orderClicked(item: CategoriesModel)
+        fun itemShowClicked(item: CoursesModel)
     }
 }

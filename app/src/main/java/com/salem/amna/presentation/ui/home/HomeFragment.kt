@@ -106,58 +106,108 @@ class   HomeFragment : BaseFragment() {
         binding.rvOrders.layoutManager = LinearLayoutManager(requireContext())
         binding.rvOrders.adapter = ordersAdapter
 
-        binding.lastOrder.tvOrderNumber.text = "${state.result.last_leftovers[0].number}"
-        binding.lastOrder.tvOrderDate.text = "${state.result.last_leftovers[0].date}"
+        if (state.result.last_leftovers.isNotEmpty()) {
+            binding.lastOrder.tvOrderNumber.text = "${state.result.last_leftovers[0].number}"
+            binding.lastOrder.tvOrderDate.text = "${state.result.last_leftovers[0].date}"
 //        binding.lastOrder.tvOrderStatus.text = "${state.result.last_leftovers[0].status}"
-        when(state.result.last_leftovers[0].status){
-            1 ->{
-                binding.lastOrder.tvOrderStatus.text = "${getString(R.string.pending)}"
-                binding.lastOrder.tvOrderStatus.setTextColor(getColor(requireContext(),R.color.orange))
-                binding.lastOrder.tvOrderStatus.background = ContextCompat.getDrawable(requireContext(), R.drawable.bg_orange_status)
-                binding.lastOrder.ivPending.setImageResource(R.drawable.ic_radio_checked)
-                binding.lastOrder.ivAccepted.setImageResource(R.drawable.ic_radio_semi_checked)
-                binding.lastOrder.ivDelivery.setImageResource(R.drawable.ic_radio_unchecked)
-                binding.lastOrder.ivCoupon.setImageResource(R.drawable.ic_radio_unchecked)
-                binding.lastOrder.pendingView.background = ContextCompat.getDrawable(requireContext(), R.drawable.view_background_green)
-                binding.lastOrder.acceptView.background = ContextCompat.getDrawable(requireContext(), R.drawable.view_background_gray)
-                binding.lastOrder.deliveryView.background = ContextCompat.getDrawable(requireContext(), R.drawable.view_background_gray)
-            }
-            2 -> {
-                binding.lastOrder.tvOrderStatus.text = "${getString(R.string.accepted)}"
-                binding.lastOrder.tvOrderStatus.setTextColor(getColor(requireContext(),R.color.blue))
-                binding.lastOrder.tvOrderStatus.background = ContextCompat.getDrawable(requireContext(), R.drawable.bg_blue_status)
-                binding.lastOrder.ivPending.setImageResource(R.drawable.ic_radio_checked)
-                binding.lastOrder.ivAccepted.setImageResource(R.drawable.ic_radio_checked)
-                binding.lastOrder.ivDelivery.setImageResource(R.drawable.ic_radio_semi_checked)
-                binding.lastOrder.ivCoupon.setImageResource(R.drawable.ic_radio_unchecked)
-                binding.lastOrder.pendingView.background = ContextCompat.getDrawable(requireContext(), R.drawable.view_background_green)
-                binding.lastOrder.acceptView.background = ContextCompat.getDrawable(requireContext(), R.drawable.view_background_green)
-                binding.lastOrder.deliveryView.background = ContextCompat.getDrawable(requireContext(), R.drawable.view_background_gray)
-            }
-            3 -> {
-                binding.lastOrder.tvOrderStatus.text = "${getString(R.string.finished)}"
-                binding.lastOrder.tvOrderStatus.setTextColor(getColor(requireContext(),R.color.mainGreen))
-                binding.lastOrder.tvOrderStatus.background = ContextCompat.getDrawable(requireContext(), R.drawable.bg_green_status)
-                binding.lastOrder.ivPending.setImageResource(R.drawable.ic_radio_checked)
-                binding.lastOrder.ivAccepted.setImageResource(R.drawable.ic_radio_checked)
-                binding.lastOrder.ivDelivery.setImageResource(R.drawable.ic_radio_checked)
-                binding.lastOrder.ivCoupon.setImageResource(R.drawable.ic_radio_semi_checked)
-                binding.lastOrder.pendingView.background = ContextCompat.getDrawable(requireContext(), R.drawable.view_background_green)
-                binding.lastOrder.acceptView.background = ContextCompat.getDrawable(requireContext(), R.drawable.view_background_green)
-                binding.lastOrder.deliveryView.background = ContextCompat.getDrawable(requireContext(), R.drawable.view_background_green)
-            }
-            4 -> {
-                binding.lastOrder.tvOrderStatus.text = "${getString(R.string.rejected)}"
-                binding.lastOrder.tvOrderStatus.setTextColor(getColor(requireContext(),R.color.red))
-                binding.lastOrder.tvOrderStatus.background = ContextCompat.getDrawable(requireContext(), R.drawable.bg_red_status)
-                binding.lastOrder.ivPending.setImageResource(R.drawable.ic_radio_unchecked)
-                binding.lastOrder.ivAccepted.setImageResource(R.drawable.ic_radio_unchecked)
-                binding.lastOrder.ivDelivery.setImageResource(R.drawable.ic_radio_unchecked)
-                binding.lastOrder.ivCoupon.setImageResource(R.drawable.ic_radio_unchecked)
-                binding.lastOrder.pendingView.background = ContextCompat.getDrawable(requireContext(), R.drawable.view_background_gray)
-                binding.lastOrder.acceptView.background = ContextCompat.getDrawable(requireContext(), R.drawable.view_background_gray)
-                binding.lastOrder.deliveryView.background = ContextCompat.getDrawable(requireContext(), R.drawable.view_background_gray)
+            when (state.result.last_leftovers[0].status) {
+                1 -> {
+                    binding.lastOrder.tvOrderStatus.text = "${getString(R.string.pending)}"
+                    binding.lastOrder.tvOrderStatus.setTextColor(
+                        getColor(
+                            requireContext(),
+                            R.color.orange
+                        )
+                    )
+                    binding.lastOrder.tvOrderStatus.background =
+                        ContextCompat.getDrawable(requireContext(), R.drawable.bg_orange_status)
+                    binding.lastOrder.ivPending.setImageResource(R.drawable.ic_radio_checked)
+                    binding.lastOrder.ivAccepted.setImageResource(R.drawable.ic_radio_semi_checked)
+                    binding.lastOrder.ivDelivery.setImageResource(R.drawable.ic_radio_unchecked)
+                    binding.lastOrder.ivCoupon.setImageResource(R.drawable.ic_radio_unchecked)
+                    binding.lastOrder.pendingView.background = ContextCompat.getDrawable(
+                        requireContext(),
+                        R.drawable.view_background_green
+                    )
+                    binding.lastOrder.acceptView.background =
+                        ContextCompat.getDrawable(requireContext(), R.drawable.view_background_gray)
+                    binding.lastOrder.deliveryView.background =
+                        ContextCompat.getDrawable(requireContext(), R.drawable.view_background_gray)
+                }
+                2 -> {
+                    binding.lastOrder.tvOrderStatus.text = "${getString(R.string.accepted)}"
+                    binding.lastOrder.tvOrderStatus.setTextColor(
+                        getColor(
+                            requireContext(),
+                            R.color.blue
+                        )
+                    )
+                    binding.lastOrder.tvOrderStatus.background =
+                        ContextCompat.getDrawable(requireContext(), R.drawable.bg_blue_status)
+                    binding.lastOrder.ivPending.setImageResource(R.drawable.ic_radio_checked)
+                    binding.lastOrder.ivAccepted.setImageResource(R.drawable.ic_radio_checked)
+                    binding.lastOrder.ivDelivery.setImageResource(R.drawable.ic_radio_semi_checked)
+                    binding.lastOrder.ivCoupon.setImageResource(R.drawable.ic_radio_unchecked)
+                    binding.lastOrder.pendingView.background = ContextCompat.getDrawable(
+                        requireContext(),
+                        R.drawable.view_background_green
+                    )
+                    binding.lastOrder.acceptView.background = ContextCompat.getDrawable(
+                        requireContext(),
+                        R.drawable.view_background_green
+                    )
+                    binding.lastOrder.deliveryView.background =
+                        ContextCompat.getDrawable(requireContext(), R.drawable.view_background_gray)
+                }
+                3 -> {
+                    binding.lastOrder.tvOrderStatus.text = "${getString(R.string.finished)}"
+                    binding.lastOrder.tvOrderStatus.setTextColor(
+                        getColor(
+                            requireContext(),
+                            R.color.mainGreen
+                        )
+                    )
+                    binding.lastOrder.tvOrderStatus.background =
+                        ContextCompat.getDrawable(requireContext(), R.drawable.bg_green_status)
+                    binding.lastOrder.ivPending.setImageResource(R.drawable.ic_radio_checked)
+                    binding.lastOrder.ivAccepted.setImageResource(R.drawable.ic_radio_checked)
+                    binding.lastOrder.ivDelivery.setImageResource(R.drawable.ic_radio_checked)
+                    binding.lastOrder.ivCoupon.setImageResource(R.drawable.ic_radio_semi_checked)
+                    binding.lastOrder.pendingView.background = ContextCompat.getDrawable(
+                        requireContext(),
+                        R.drawable.view_background_green
+                    )
+                    binding.lastOrder.acceptView.background = ContextCompat.getDrawable(
+                        requireContext(),
+                        R.drawable.view_background_green
+                    )
+                    binding.lastOrder.deliveryView.background = ContextCompat.getDrawable(
+                        requireContext(),
+                        R.drawable.view_background_green
+                    )
+                }
+                4 -> {
+                    binding.lastOrder.tvOrderStatus.text = "${getString(R.string.rejected)}"
+                    binding.lastOrder.tvOrderStatus.setTextColor(
+                        getColor(
+                            requireContext(),
+                            R.color.red
+                        )
+                    )
+                    binding.lastOrder.tvOrderStatus.background =
+                        ContextCompat.getDrawable(requireContext(), R.drawable.bg_red_status)
+                    binding.lastOrder.ivPending.setImageResource(R.drawable.ic_radio_unchecked)
+                    binding.lastOrder.ivAccepted.setImageResource(R.drawable.ic_radio_unchecked)
+                    binding.lastOrder.ivDelivery.setImageResource(R.drawable.ic_radio_unchecked)
+                    binding.lastOrder.ivCoupon.setImageResource(R.drawable.ic_radio_unchecked)
+                    binding.lastOrder.pendingView.background =
+                        ContextCompat.getDrawable(requireContext(), R.drawable.view_background_gray)
+                    binding.lastOrder.acceptView.background =
+                        ContextCompat.getDrawable(requireContext(), R.drawable.view_background_gray)
+                    binding.lastOrder.deliveryView.background =
+                        ContextCompat.getDrawable(requireContext(), R.drawable.view_background_gray)
 
+                }
             }
         }
 

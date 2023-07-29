@@ -40,7 +40,7 @@ class AccountInfoViewModel @Inject constructor(
         getAccountInfo()
     }
 
-    private fun getAccountInfo() {
+    fun getAccountInfo() {
         getAccountInfoUseCase().onEach { result ->
             _uiState.value = when (result) {
                 is Resource.Success -> {

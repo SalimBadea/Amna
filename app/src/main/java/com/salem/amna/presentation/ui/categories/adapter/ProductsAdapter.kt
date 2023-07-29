@@ -1,4 +1,4 @@
-package com.salem.amna.presentation.ui.categories
+package com.salem.amna.presentation.ui.categories.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.salem.amna.R
-import com.salem.amna.data.models.common.AddressModel
 import com.salem.amna.data.models.common.CategoryItemModel
 import com.salem.amna.databinding.ItemProductBinding
 import com.salem.amna.util.loadImageFromInternet

@@ -2,7 +2,6 @@ package com.salem.amna.presentation.ui.categories
 
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
@@ -13,16 +12,16 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.salem.amna.R
 import com.salem.amna.base.BaseFragment
 import com.salem.amna.data.models.common.CategoriesModel
-import com.salem.amna.data.models.common.CategoryItemModel
 import com.salem.amna.databinding.FragmentCategoriesBinding
 import com.salem.amna.presentation.common.AppSharedViewModel
 import com.salem.amna.presentation.common.NavigationCommand
 import com.salem.amna.presentation.common.UiEffect
 import com.salem.amna.presentation.ui.add_product.AddProductFragment
+import com.salem.amna.presentation.ui.categories.adapter.CategoriesAdapter
+import com.salem.amna.presentation.ui.categories.adapter.ProductsAdapter
 import com.salem.amna.util.hideView
 import com.salem.amna.util.replaceFragment
 import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class CategoriesFragment : BaseFragment(), CategoriesAdapter.OnItemClick {

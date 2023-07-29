@@ -14,6 +14,7 @@ import androidx.navigation.fragment.findNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.salem.amna.R
 import com.salem.amna.base.BaseFragment
+import com.salem.amna.data.repository.local.preference.LocalePreference
 import com.salem.amna.databinding.FragmentMyAccountBinding
 import com.salem.amna.presentation.AuthActivity
 import com.salem.amna.presentation.common.AppSharedViewModel
@@ -32,6 +33,8 @@ import com.salem.amna.util.loadImageFromInternet
 import com.salem.amna.util.replaceFragment
 import com.salem.amna.util.showView
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.runBlocking
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class MyAccountFragment : BaseFragment() {
@@ -39,6 +42,9 @@ class MyAccountFragment : BaseFragment() {
     private val binding: FragmentMyAccountBinding by lazy {
         FragmentMyAccountBinding.inflate(layoutInflater)
     }
+
+    @Inject
+    lateinit var localePreference: LocalePreference
 
     private lateinit var navBar: BottomNavigationView
     private lateinit var customBtnLayout: ConstraintLayout
@@ -96,6 +102,9 @@ class MyAccountFragment : BaseFragment() {
         }
 
         binding.tvLogout.setOnClickListener {
+            runBlocking {
+                localePreference.setLoginState(false)
+            }
             startActivity(Intent(requireContext(), AuthActivity::class.java))
         }
 

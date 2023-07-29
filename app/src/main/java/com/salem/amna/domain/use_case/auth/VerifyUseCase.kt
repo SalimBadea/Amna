@@ -29,8 +29,14 @@ class VerifyUseCase @Inject constructor(
                 Log.d(TAG, "invoke: Login use case errorBody ${loginResponse.errorBody()}")
                 val errorString = loginResponse.errorBody()?.byteStream()?.bufferedReader().use { it?.readText() }  // defaults to UTF-8
 
-                val errorMessage =
-                    getErrorResponse(errorString!!).errors!![0] ?: ""
+                var errorMessage : String = ""
+                if (getErrorResponse(errorString!!).errors!!.isEmpty())
+                    errorMessage =
+                        getErrorResponse(errorString).message ?: ""
+                else
+                    errorMessage =
+                        getErrorResponse(errorString).errors!![0] ?: ""
+
                 Log.e(TAG, "invoke: Error Login use case $errorMessage")
                 emit(Resource.Error(errorMessage))
             }
