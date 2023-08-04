@@ -142,6 +142,20 @@
     <string name="please_add_one_image_at_least">Please add one image at least</string>
     <string name="please_select_product_status">Please select product status</string>
     <string name="please_select_product_brand">Please select product brand</string>
+    <string name="my_points">My Points</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="current_balance">Current Balance</string>
+    <string name="last_processes">Last Processes</string>
+    <string name="wallet">Wallet</string>
+    <string name="bank">Bank</string>
+    <string name="exchange_my_points">Exchange My Points</string>
+    <string name="bank_account">Bank Account</string>
+    <string name="electronic_wallet">Electronic Wallet</string>
+    <string name="bank_name">Bank Name</string>
+    <string name="Account_number">Bank Account Number</string>
+    <string name="account_owner">Account Owner Name</string>
+    <string name="exchange">Exchange</string>
 
 
 </resources>

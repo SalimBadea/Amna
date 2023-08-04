@@ -1,5 +1,8 @@
 package com.salem.amna.presentation.ui.courses
 
+import android.content.ActivityNotFoundException
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -24,6 +27,7 @@ import com.salem.amna.util.loadImageFromInternet
 import com.salem.amna.util.replaceFragment
 import com.salem.amna.util.showView
 import dagger.hilt.android.AndroidEntryPoint
+
 
 @AndroidEntryPoint
 class CoursesFragment : BaseFragment(), CoursesAdapter.OnItemClick {
@@ -152,6 +156,15 @@ class CoursesFragment : BaseFragment(), CoursesAdapter.OnItemClick {
     }
 
     override fun itemShowClicked(item: CoursesModel) {
-
+        val appIntent = Intent(Intent.ACTION_VIEW, Uri.parse("vnd.youtube:${item.link}"))
+        val webIntent = Intent(
+            Intent.ACTION_VIEW,
+            Uri.parse("http://www.youtube.com/watch?v=${item.link}")
+        )
+        try {
+            startActivity(appIntent)
+        } catch (ex: ActivityNotFoundException) {
+            startActivity(webIntent)
+        }
     }
 }
