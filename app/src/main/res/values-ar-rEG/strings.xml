@@ -92,6 +92,7 @@
     <string name="addresses">العناوين</string>
     <string name="new_address">عنوان جديد</string>
     <string name="points_worth">نقطة</string>
+    <string name="currency">جنيه</string>
     <string name="there_are_no_addresses_for_you">لا يوجد عناوين خاصة لك</string>
 
     <string name="that_is_not_a_valid_email">هذا البريد الالكتروني غير صالح</string>
@@ -137,5 +138,17 @@
     <string name="please_select_product_status">برجاء تحديد حالة المخلف</string>
     <string name="please_select_product_brand">برجاء تحديد العلامة التجارية للمخلف</string>
 
+    <string name="my_points">نقاطي</string>
+    <string name="current_balance">الرصيد الحالي</string>
+    <string name="last_processes">آخر العمليات</string>
+    <string name="wallet">محفظة</string>
+    <string name="bank">بنك</string>
+    <string name="exchange_my_points">تحويل نقاطي</string>
+    <string name="bank_account">حساب بنكي</string>
+    <string name="electronic_wallet">محفظة إلكترونية</string>
+    <string name="bank_name">اسم البنك</string>
+    <string name="Account_number">رقم الحساب البنكي</string>
+    <string name="account_owner">اسم مالك الحساب</string>
+    <string name="exchange">تحويل</string>
 
 </resources>

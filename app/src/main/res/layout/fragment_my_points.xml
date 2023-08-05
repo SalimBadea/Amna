@@ -153,12 +153,10 @@
             android:padding="@dimen/_4sdp"
             android:scaleType="centerCrop"
             android:src="@drawable/arrow_swap"
-            android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="ContentDescription"
-            tools:visibility="visible" />
+            tools:ignore="ContentDescription"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -179,7 +177,7 @@
         android:id="@+id/llLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/_12sdp"
+        android:layout_marginHorizontal="@dimen/_8sdp"
         android:layout_marginTop="@dimen/_8sdp"
         android:background="@drawable/bg_light_gray"
         android:orientation="horizontal"
@@ -207,7 +205,8 @@
             android:id="@+id/tvWallet"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/_6sdp"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:layout_marginEnd="@dimen/_4sdp"
             android:layout_weight="1"
             android:fontFamily="@font/cairo_regular"
             android:gravity="center"
@@ -222,11 +221,28 @@
             android:id="@+id/tvBank"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/_6sdp"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:layout_marginEnd="@dimen/_4sdp"
             android:layout_weight="1"
             android:fontFamily="@font/cairo_regular"
             android:gravity="center"
             android:text="@string/bank"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tvPoints"
+            app:layout_constraintTop_toBottomOf="@id/tvPoints" />
+
+        <TextView
+            android:id="@+id/tvBankCart"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:layout_marginEnd="@dimen/_4sdp"
+            android:layout_weight="1"
+            android:fontFamily="@font/cairo_regular"
+            android:gravity="center"
+            android:text="@string/bank_card"
             android:textColor="@color/black"
             android:textSize="@dimen/_14ssp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -251,7 +267,7 @@
             android:layout_height="match_parent">
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvCurrency"
+                android:id="@+id/rvWithdrawals"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:layout_constraintTop_toTopOf="parent"

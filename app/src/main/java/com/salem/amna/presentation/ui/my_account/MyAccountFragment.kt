@@ -26,6 +26,7 @@ import com.salem.amna.presentation.ui.my_account.addresses.AddressesFragment
 import com.salem.amna.presentation.ui.my_account.change_password.ChangePasswordFragment
 import com.salem.amna.presentation.ui.my_account.contact_us.ContactUsFragment
 import com.salem.amna.presentation.ui.my_account.edit_profile.EditProfileFragment
+import com.salem.amna.presentation.ui.my_account.my_points.MyPointsFragment
 import com.salem.amna.presentation.ui.my_account.privacy_policy.PrivacyPolicyFragment
 import com.salem.amna.presentation.ui.my_account.volunteering.VolunteeringFragment
 import com.salem.amna.util.ShareUtils.shareImage
@@ -67,6 +68,10 @@ class MyAccountFragment : BaseFragment() {
 
         binding.tvEdit.setOnClickListener {
             replaceFragment(EditProfileFragment(), R.id.fragmentContainer, true)
+        }
+
+        binding.tvPoints.setOnClickListener {
+            replaceFragment(MyPointsFragment(), R.id.fragmentContainer, true)
         }
 
         binding.tvChangePassword.setOnClickListener {

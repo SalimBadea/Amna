@@ -9,6 +9,7 @@ import com.salem.amna.data.apiservice.categories.CategoriesService
 import com.salem.amna.data.apiservice.courses.CoursesService
 import com.salem.amna.data.apiservice.general.GeneralService
 import com.salem.amna.data.apiservice.home.HomeServices
+import com.salem.amna.data.apiservice.points.PointsServices
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -65,10 +66,10 @@ class ApiModule {
         return retrofit.create(CartServices::class.java)
     }
 
-//    @Provides
-//    fun bindOrderService(retrofit: Retrofit): OrderService {
-//        return retrofit.create(OrderService::class.java)
-//    }
+    @Provides
+    fun bindOrderService(retrofit: Retrofit): PointsServices {
+        return retrofit.create(PointsServices::class.java)
+    }
 //
 //    @Provides
 //    fun bindFileMangerService(retrofit: Retrofit): FileMangerService {
