@@ -112,7 +112,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/_8sdp"
             android:fontFamily="@font/cairo_regular"
-            android:text="1500"
+            android:text=""
             android:textColor="@color/black"
             android:textSize="@dimen/_12ssp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -138,7 +138,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_4sdp"
             android:fontFamily="@font/cairo_regular"
-            android:text="290 EG"
+            android:text=""
             android:textColor="@color/black"
             android:textSize="@dimen/_12ssp"
             app:layout_constraintBottom_toBottomOf="@id/tvPointsText"
@@ -202,22 +202,6 @@
             app:layout_constraintTop_toBottomOf="@id/tvPoints" />
 
         <TextView
-            android:id="@+id/tvWallet"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_6sdp"
-            android:layout_marginEnd="@dimen/_4sdp"
-            android:layout_weight="1"
-            android:fontFamily="@font/cairo_regular"
-            android:gravity="center"
-            android:text="@string/wallet"
-            android:textColor="@color/black"
-            android:textSize="@dimen/_14ssp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@id/tvPoints"
-            app:layout_constraintTop_toBottomOf="@id/tvPoints" />
-
-        <TextView
             android:id="@+id/tvBank"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -227,6 +211,22 @@
             android:fontFamily="@font/cairo_regular"
             android:gravity="center"
             android:text="@string/bank"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tvPoints"
+            app:layout_constraintTop_toBottomOf="@id/tvPoints" />
+
+        <TextView
+            android:id="@+id/tvWallet"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:layout_marginEnd="@dimen/_4sdp"
+            android:layout_weight="1"
+            android:fontFamily="@font/cairo_regular"
+            android:gravity="center"
+            android:text="@string/wallet"
             android:textColor="@color/black"
             android:textSize="@dimen/_14ssp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -266,7 +266,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <androidx.recyclerview.widget.RecyclerView
+            <com.factor.bouncy.BouncyRecyclerView
                 android:id="@+id/rvWithdrawals"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"

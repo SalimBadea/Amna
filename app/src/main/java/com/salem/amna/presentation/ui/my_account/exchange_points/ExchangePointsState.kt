@@ -12,9 +12,13 @@ data class ExchangePointsState(
     val isPoints: Boolean = false,
     val isWithdrawals: Boolean = false,
     val isBanks: Boolean = false,
+    val isWithdrawAccount: Boolean = false,
+    val isWithdrawCard: Boolean = false,
+    val isWithdrawWallet: Boolean = false,
     val banksResult: BanksResponse? = null,
     val pointsResult: PointsResponse? = null,
     val withdrawalsResult: WithdrawalsResponse? = null,
+    val withdrawBankAccountResult: ContactUsResponse? = null,
     val error: String = "",
     val orderNumber: String? = null,
     val orderNumberError: Int? = null,
@@ -30,12 +34,4 @@ data class ExchangePointsState(
     val phoneError: Int? = null,
     val message: String = "",
     val messageError: Int? = null,
-
-    ) {
-
-    fun toContactUsBody() = ContactUsBody(
-        phone = phone,
-        name = name,
-        notes = message
-    )
-}
+)

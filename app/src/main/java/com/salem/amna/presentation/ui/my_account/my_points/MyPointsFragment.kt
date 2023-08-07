@@ -1,6 +1,7 @@
 package com.salem.amna.presentation.ui.my_account.my_points
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -10,9 +11,11 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.salem.amna.R
 import com.salem.amna.base.BaseFragment
 import com.salem.amna.data.models.response.points.PointsResponse
+import com.salem.amna.data.models.response.points.WithdrawalsResponse
 import com.salem.amna.databinding.FragmentMyPointsBinding
 import com.salem.amna.presentation.common.NavigationCommand
 import com.salem.amna.presentation.common.UiEffect
@@ -29,6 +32,8 @@ class MyPointsFragment : BaseFragment() {
     private val binding by lazy {
         FragmentMyPointsBinding.inflate(layoutInflater)
     }
+
+    private lateinit var withdrawalsAdapter: WithdrawalsAdapter
 
     private var type: String? = null
 
@@ -83,9 +88,11 @@ class MyPointsFragment : BaseFragment() {
                     initData(state.pointsResult!!)
                     hideLoadingDialog()
                 }
-//                if (state.isWithdrawals) {
-//                    showLoadingDialog()
-//                }
+                if (state.isWithdrawals) {
+                    initWithdrawals(state.withdrawalsResult)
+                    Log.e("MyPoints", "withdrawalsResult >> ${state.withdrawalsResult?.withdrawals}")
+                    hideLoadingDialog()
+                }
                 if (state.isLoading) {
                     showLoadingDialog()
                 }
@@ -99,15 +106,20 @@ class MyPointsFragment : BaseFragment() {
     private fun initData(state: PointsResponse) {
         binding.tvPoints.text = "${state.points.toString()}"
         binding.tvPointsText.text = "${state.points.toString()}"
-        binding.tvCurrentValue.text =
-            "${state.points.toString()} ${getString(R.string.currency)}"
+        binding.tvCurrentValue.text = "${state.money.toString()} ${getString(R.string.currency)}"
+    }
 
-//        if (state.withdrawalsResult != null)
-//            if (state.withdrawalsResult.withdrawals!!.isNotEmpty()) {
-//                binding.rvWithdrawals.visibility = View.VISIBLE
-//            } else {
-//                binding.rvWithdrawals.visibility = View.GONE
-//            }
+    private fun initWithdrawals(state: WithdrawalsResponse?){
+        if (state?.withdrawals != null) {
+            withdrawalsAdapter = WithdrawalsAdapter(state.withdrawals)
+            binding.rvWithdrawals.layoutManager = LinearLayoutManager(requireContext())
+            binding.rvWithdrawals.adapter = withdrawalsAdapter
+            if (state.withdrawals.isNotEmpty()) {
+                binding.rvWithdrawals.visibility = View.VISIBLE
+            } else {
+                binding.rvWithdrawals.visibility = View.GONE
+            }
+        }
     }
 
     private fun changeBackground(

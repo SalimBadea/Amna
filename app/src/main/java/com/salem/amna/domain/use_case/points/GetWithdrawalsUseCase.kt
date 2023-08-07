@@ -2,11 +2,8 @@ package com.salem.amna.domain.use_case.points
 
 import android.util.Log
 import com.salem.amna.data.models.response.MainResponseModel
-import com.salem.amna.data.models.response.add_product.BrandsResponse
-import com.salem.amna.data.models.response.points.BanksResponse
-import com.salem.amna.data.models.response.points.PointsResponse
 import com.salem.amna.data.models.response.points.WithdrawalsResponse
-import com.salem.amna.domain.repository.PointsRepository
+import com.salem.amna.domain.repository.points.PointsRepository
 import com.salem.amna.util.Resource
 import com.salem.amna.util.getErrorResponse
 import kotlinx.coroutines.flow.Flow

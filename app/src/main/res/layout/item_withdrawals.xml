@@ -1,8 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
+<ImageView
+    android:id="@+id/ivType"
+    android:layout_width="@dimen/_50sdp"
+    android:layout_height="@dimen/_50sdp"
+    android:background="@drawable/circle_background"
+    android:backgroundTint="@color/orange"
+    app:shapeAppearance="@style/ImageRoundedStyle"
+    app:srcCompat="@drawable/ic_bank"
+    android:scaleType="centerCrop"
+    android:padding="@dimen/_12sdp"
+    android:layout_margin="@dimen/_8sdp"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent"/>
 
+    <LinearLayout
+        android:id="@+id/llLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="@dimen/_8sdp"
+        app:layout_constraintTop_toTopOf="@id/ivType"
+        app:layout_constraintStart_toEndOf="@id/ivType">
+
+        <TextView
+            android:id="@+id/tvPoints"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:fontFamily="@font/cairo_bold"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:fontFamily="@font/cairo_bold"
+            android:text="="
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintBottom_toBottomOf="@id/tvPointsText"
+            app:layout_constraintStart_toEndOf="@id/tvPointsText"
+            app:layout_constraintTop_toTopOf="@id/tvPointsText" />
+
+        <TextView
+            android:id="@+id/tvValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:fontFamily="@font/cairo_bold"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintBottom_toBottomOf="@id/tvPointsText"
+            app:layout_constraintStart_toEndOf="@id/tvPointsValue"
+            app:layout_constraintTop_toTopOf="@id/tvPointsText" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:fontFamily="@font/cairo_regular"
+        android:text=""
+        android:textColor="@color/lightGray1"
+        android:textSize="@dimen/_14ssp"
+        app:layout_constraintTop_toBottomOf="@id/llLayout"
+        app:layout_constraintStart_toEndOf="@id/ivType" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

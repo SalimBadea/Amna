@@ -155,6 +155,7 @@
     <string name="account_owner">Account Owner Name</string>
     <string name="exchange">Exchange</string>
     <string name="bank_card">Bank Card</string>
+    <string name="card_number">Bank Card Number</string>
 
 
 </resources>
