@@ -155,6 +155,16 @@ class ExchangePointsFragment : BaseFragment() {
                     baseActivity.onBackPressed()
 
                 }
+                if (state.isWithdrawCard){
+                    showToast(state.message)
+                    hideLoadingDialog()
+                    baseActivity.onBackPressed()
+                }
+                if (state.isWithdrawWallet){
+                    showToast(state.message)
+                    hideLoadingDialog()
+                    baseActivity.onBackPressed()
+                }
 
                 if (state.isLoading) {
                     showLoadingDialog()
