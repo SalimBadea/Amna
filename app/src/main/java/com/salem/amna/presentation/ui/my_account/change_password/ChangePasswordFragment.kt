@@ -23,7 +23,9 @@ import com.salem.amna.presentation.ui.auth.login.LoginEvent
 import com.salem.amna.presentation.ui.auth.login.LoginState
 import com.salem.amna.presentation.ui.auth.login.LoginViewModel
 import com.salem.amna.util.hideView
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class ChangePasswordFragment : BaseFragment() {
 
     private val binding: FragmentChangePasswordBinding by lazy {
