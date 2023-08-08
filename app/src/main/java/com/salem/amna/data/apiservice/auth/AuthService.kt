@@ -1,10 +1,12 @@
 package com.salem.amna.data.apiservice.auth
 
+import com.salem.amna.data.models.post_body.ChangePasswordBody
 import com.salem.amna.data.models.post_body.LoginBody
 import com.salem.amna.data.models.post_body.RegisterBody
 import com.salem.amna.data.models.response.MainResponseModel
 import com.salem.amna.data.models.response.auth.LoginResponse
 import com.salem.amna.data.models.response.auth.RegisterResponse
+import com.salem.amna.data.models.response.general.ContactUsResponse
 import retrofit2.Response
 import retrofit2.http.*
 import retrofit2.http.Body
@@ -26,6 +28,11 @@ interface AuthService {
     suspend fun verify(
         @Query("code") code: String
     ): Response<MainResponseModel<Any>>
+
+    @POST("password")
+    suspend fun changePassword(
+        @Body body: ChangePasswordBody
+    ): Response<MainResponseModel<ContactUsResponse>>
 
 
 }

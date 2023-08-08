@@ -4,6 +4,7 @@ import com.salem.amna.data.models.post_body.ContactUsBody
 import com.salem.amna.data.models.response.MainResponseModel
 import com.salem.amna.data.models.response.general.ContactUsResponse
 import com.salem.amna.data.models.response.general.GeneralResponse
+import com.salem.amna.data.models.response.pages.PagesResponse
 import retrofit2.Response
 import retrofit2.http.*
 
@@ -19,5 +20,11 @@ interface GeneralService {
     suspend fun contactUs(
         @Body contactUsBody: ContactUsBody
     ): Response<MainResponseModel<ContactUsResponse>>
+
+    @GET("about")
+    suspend fun getAbout(): Response<MainResponseModel<PagesResponse>>
+
+    @GET("privacy")
+    suspend fun getPrivacy(): Response<MainResponseModel<PagesResponse>>
 
 }

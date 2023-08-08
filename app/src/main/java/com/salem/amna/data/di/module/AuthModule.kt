@@ -2,9 +2,11 @@ package com.salem.amna.data.di.module
 
 
 import com.salem.amna.data.apiservice.auth.AuthService
+import com.salem.amna.data.repository.remote.auth.ChangePasswordRepositoryImpl
 import com.salem.amna.data.repository.remote.auth.LoginRepositoryImpl
 import com.salem.amna.data.repository.remote.auth.RegisterRepositoryImpl
 import com.salem.amna.data.repository.remote.auth.VerifyRepositoryImpl
+import com.salem.amna.domain.repository.auth.ChangePasswordRepository
 import com.salem.amna.domain.repository.auth.LoginRepository
 import com.salem.amna.domain.repository.auth.RegisterRepository
 import com.salem.amna.domain.repository.auth.VerifyRepository
@@ -34,6 +36,12 @@ object AuthModule {
     @Singleton
     fun provideVerifyRepository(api: AuthService): VerifyRepository {
         return VerifyRepositoryImpl(api)
+    }
+
+    @Provides
+    @Singleton
+    fun provideChangePasswordRepository(api: AuthService): ChangePasswordRepository {
+        return ChangePasswordRepositoryImpl(api)
     }
 
 }

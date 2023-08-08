@@ -3,6 +3,7 @@ package com.salem.amna.domain.use_case.general
 import android.util.Log
 import com.salem.amna.data.models.response.MainResponseModel
 import com.salem.amna.data.models.response.general.GeneralResponse
+import com.salem.amna.data.models.response.pages.PagesResponse
 import com.salem.amna.domain.repository.general.GeneralRepository
 import com.salem.amna.util.Resource
 import com.salem.amna.util.getErrorResponse
@@ -10,14 +11,14 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 
-class GeneralUseCase @Inject constructor(
+class GetPrivacyUseCase @Inject constructor(
     private val repository: GeneralRepository
 ) {
-    private val TAG = "GeneralUseCase"
-    operator fun invoke(page:Int): Flow<Resource<MainResponseModel<GeneralResponse>>> = flow {
+    private val TAG = "GetPrivacyUseCase"
+    operator fun invoke(): Flow<Resource<MainResponseModel<PagesResponse>>> = flow {
         try {
             emit(Resource.Loading())
-            val myResponse = repository.getGeneralData(page)
+            val myResponse = repository.getPrivacy()
             Log.d(TAG, "invoke: General use case ${myResponse.isSuccessful}")
             if (myResponse.isSuccessful && myResponse.body() != null) {
                 myResponse.body()?.let { response ->
