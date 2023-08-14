@@ -9,10 +9,13 @@ import androidx.annotation.RawRes
 import androidx.viewpager2.widget.ViewPager2
 import com.salem.amna.R
 import com.salem.amna.base.BaseFragment
+import com.salem.amna.data.repository.local.preference.LocalePreference
 import com.salem.amna.databinding.FragmentOnBoardingBinding
+import com.salem.amna.presentation.ui.auth.account_type.AccountTypeFragment
 import com.salem.amna.presentation.ui.auth.login.LoginFragment
 import com.salem.amna.util.replaceFragment
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class OnBoardingFragment : BaseFragment() {
@@ -20,6 +23,9 @@ class OnBoardingFragment : BaseFragment() {
     private val binding: FragmentOnBoardingBinding by lazy {
         FragmentOnBoardingBinding.inflate(layoutInflater)
     }
+
+    @Inject
+    lateinit var localePreference: LocalePreference
 
     override fun getRootView(): View {
         return binding.root
@@ -54,8 +60,9 @@ class OnBoardingFragment : BaseFragment() {
         val currentItem = binding.viewPager.currentItem
         val isLastItem = currentItem == introPagerAdapter.itemCount - 1
         if (isLastItem) {
-            activity?.finishAffinity()
-            replaceFragment(LoginFragment(), R.id.fragmentContainer, true)
+//            activity?.finishAffinity()
+//            replaceFragment(LoginFragment(), R.id.fragmentContainer, true)
+            replaceFragment(AccountTypeFragment(), R.id.fragmentContainerView, true)
         }
         binding.viewPager.currentItem = currentItem + 1
     }
@@ -64,8 +71,9 @@ class OnBoardingFragment : BaseFragment() {
         binding.continueBtn.setOnClickListener { next() }
 
         binding.skipBtn.setOnClickListener {
-            activity?.finishAffinity()
-            replaceFragment(LoginFragment(), R.id.fragmentContainer, true)
+//            activity?.finishAffinity()
+//            replaceFragment(LoginFragment(), R.id.fragmentContainer, true)
+            replaceFragment(AccountTypeFragment(), R.id.fragmentContainerView, true)
         }
     }
 

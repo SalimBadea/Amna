@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".presentation.ui.auth.register.RegisterFragment">
+    tools:context=".presentation.ui.register_course.RegisterCourseFragment"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
 
     <ImageView
         android:id="@+id/backIv"
@@ -12,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/_12sdp"
         android:padding="@dimen/_4sdp"
-        android:src="@drawable/ic_arrow_back"
+        android:src="@drawable/ic_close"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -21,7 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/cairo_bold"
-        android:text="@string/create_new_account"
+        android:text="@string/register_for_the_course"
         android:textColor="@color/black"
         android:textSize="@dimen/_16ssp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -29,16 +30,16 @@
         app:layout_constraintTop_toTopOf="@id/backIv" />
 
     <TextView
-            android:id="@+id/tvTxt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/tvTitle"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_margin="@dimen/_8sdp"
-            android:text="@string/complete_your_data"
-            android:textColor="@color/darkGray"
-            android:textSize="@dimen/_14ssp"
-            android:fontFamily="@font/cairo_regular"/>
+        android:id="@+id/tvTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="@dimen/_8sdp"
+        android:text="@string/complete_your_data"
+        android:textColor="@color/darkGray"
+        android:textSize="@dimen/_14ssp"
+        android:fontFamily="@font/cairo_regular"/>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/register_name_til"
@@ -138,10 +139,10 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/register_password_til"
+        android:id="@+id/register_notes_til"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginHorizontal="@dimen/_16sdp"
         android:layout_marginTop="@dimen/_8sdp"
         android:background="@drawable/bg_et_8_corner_stroke"
@@ -151,21 +152,21 @@
         app:errorEnabled="false"
         app:hintEnabled="true"
         app:hintTextColor="@color/darkGray"
-        app:passwordToggleEnabled="true"
+        app:layout_constraintHeight_percent="0.15"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/register_email_til">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/register_password_et"
+            android:id="@+id/register_notes_et"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:autofillHints="phone"
-            android:hint="@string/password"
+            android:hint="@string/notes"
             android:fontFamily="@font/cairo_regular"
             android:background="@android:color/transparent"
-            android:inputType="textPassword"
+            android:inputType="textMultiLine"
             android:padding="@dimen/_14sdp"
             android:text="" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -186,21 +187,6 @@
         app:fontFamily="@font/cairo_regular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/register_password_til" />
-
-    <TextView
-        android:id="@+id/register_now_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_16sdp"
-        android:layout_marginTop="@dimen/_16sdp"
-        android:layout_marginBottom="@dimen/_16sdp"
-        android:fontFamily="@font/cairo_bold"
-        android:text="@string/already_have_account"
-        android:textColor="@color/black"
-        android:textSize="@dimen/_12sdp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/register_notes_til" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

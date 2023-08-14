@@ -58,7 +58,7 @@ class SplashFragment : Fragment() {
             } else if (localePreference.getLangState() == true){
                 replaceFragment(LoginFragment(), R.id.fragmentContainerView, true)
             }else{
-                replaceFragment(AccountTypeFragment(), R.id.fragmentContainerView, true)
+                replaceFragment(OnBoardingFragment(), R.id.fragmentContainerView, true)
 
             }
         }

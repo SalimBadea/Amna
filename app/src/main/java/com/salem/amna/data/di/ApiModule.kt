@@ -1,5 +1,6 @@
 package com.salem.amna.data.di
 
+import com.salem.amna.data.apiservice.NotificationsService
 import com.salem.amna.data.apiservice.accountinfo.AccountInfoService
 import com.salem.amna.data.apiservice.add_product.AddProductServices
 import com.salem.amna.data.apiservice.addresses.AddressesServices
@@ -70,19 +71,11 @@ class ApiModule {
     fun bindOrderService(retrofit: Retrofit): PointsServices {
         return retrofit.create(PointsServices::class.java)
     }
-//
-//    @Provides
-//    fun bindFileMangerService(retrofit: Retrofit): FileMangerService {
-//        return retrofit.create(FileMangerService::class.java)
-//    }
-//    @Provides
-//    fun bindChatService(retrofit: Retrofit): ChatService {
-//        return retrofit.create(ChatService::class.java)
-//    }
-//    @Provides
-//    fun bindNotificationService(retrofit: Retrofit): NotificationService {
-//        return retrofit.create(NotificationService::class.java)
-//    }
+
+    @Provides
+    fun bindNotificationService(retrofit: Retrofit): NotificationsService {
+        return retrofit.create(NotificationsService::class.java)
+    }
     
 
 }

@@ -21,7 +21,9 @@ import com.salem.amna.presentation.MainActivity
 import com.salem.amna.presentation.common.NavigationCommand
 import com.salem.amna.presentation.common.UiEffect
 import com.salem.amna.presentation.ui.cart.adapter.CartItemAdapter
+import com.salem.amna.presentation.ui.earnings.NotificationsFragment
 import com.salem.amna.util.hideView
+import com.salem.amna.util.replaceFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -54,6 +56,10 @@ class CartFragment : BaseFragment() {
 
         binding.confirmBtn.setOnClickListener {
             viewModel.onEvent(CartEvent.Checkout(1, 3))
+        }
+
+        binding.notificationsImage.setOnClickListener{
+            replaceFragment(NotificationsFragment(), R.id.fragmentContainer, true)
         }
     }
 

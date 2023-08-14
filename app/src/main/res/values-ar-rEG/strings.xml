@@ -150,5 +150,10 @@
     <string name="Account_number">رقم الحساب البنكي</string>
     <string name="account_owner">اسم مالك الحساب</string>
     <string name="exchange">تحويل</string>
+    <string name="bank_card">بطاقة بنكية</string>
+    <string name="card_number">رقم البطاقة البنكية</string>
+    <string name="_new">جديد</string>
+    <string name="_old">سابق</string>
 
+    <string name="register_course_note">يرجي ترك بياناتك المطلوبة للتسجيل لدينا وسيتم التواصل معك في أقرب وقت</string>
 </resources>

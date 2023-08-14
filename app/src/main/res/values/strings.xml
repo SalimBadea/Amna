@@ -156,6 +156,9 @@
     <string name="exchange">Exchange</string>
     <string name="bank_card">Bank Card</string>
     <string name="card_number">Bank Card Number</string>
+    <string name="_new">New</string>
+    <string name="_old">Old</string>
 
+    <string name="register_course_note">Please leave your information required to register with us and we will contact you as soon as possible</string>
 
 </resources>

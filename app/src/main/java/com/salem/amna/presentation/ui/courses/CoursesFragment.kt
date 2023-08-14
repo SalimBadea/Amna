@@ -28,7 +28,6 @@ import com.salem.amna.util.replaceFragment
 import com.salem.amna.util.showView
 import dagger.hilt.android.AndroidEntryPoint
 
-
 @AndroidEntryPoint
 class CoursesFragment : BaseFragment(), CoursesAdapter.OnItemClick {
 
