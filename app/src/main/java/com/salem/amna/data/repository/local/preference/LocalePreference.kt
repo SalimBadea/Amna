@@ -5,6 +5,7 @@ import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.edit
 import com.salem.amna.data.repository.local.preference.PreferencesKeys.accountType
 import com.salem.amna.data.repository.local.preference.PreferencesKeys.fcmTokenKey
+import com.salem.amna.data.repository.local.preference.PreferencesKeys.isFirstTime
 import com.salem.amna.data.repository.local.preference.PreferencesKeys.isLang
 import com.salem.amna.data.repository.local.preference.PreferencesKeys.isLogin
 import com.salem.amna.data.repository.local.preference.PreferencesKeys.langKey
@@ -23,6 +24,13 @@ class LocalePreference @Inject constructor(private val dataStore: DataStore<Pref
         }
     }
     suspend fun getLoginState(): Boolean? = dataStore.data.first()[isLogin]
+
+    suspend fun setIsFirstTime(isFirstTime: Boolean) {
+        dataStore.edit { preferences ->
+            preferences[PreferencesKeys.isFirstTime] = isFirstTime
+        }
+    }
+    suspend fun getIsFirstTime(): Boolean? = dataStore.data.first()[isFirstTime]
 
     suspend fun setLangState(isLang: Boolean) {
         dataStore.edit { preferences ->

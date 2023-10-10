@@ -16,9 +16,9 @@ class IntroViewPagerAdapter(
 
     override fun getItemCount(): Int =  lottieAnimation.size
 
-    override fun createFragment(position: Int): Fragment = OnBoardingFragment(
-//        lottieAnimation[position],
-//        titlesList[position],
-//        descriptionList[position]
+    override fun createFragment(position: Int): Fragment = IntroFragment(
+        lottieAnimation[position],
+        titlesList[position],
+        descriptionList[position]
     )
 }

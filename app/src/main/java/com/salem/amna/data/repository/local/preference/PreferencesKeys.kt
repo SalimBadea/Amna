@@ -10,6 +10,7 @@ object PreferencesKeys {
     val accountType = intPreferencesKey("ACCOUNT_TYPE")
 
     val isLogin = booleanPreferencesKey("is_login")
+    val isFirstTime = booleanPreferencesKey("is_first_time")
     val isLang = booleanPreferencesKey("is_lang")
     val latPreferencesKey = stringPreferencesKey("lat")
     val longPreferencesKey = stringPreferencesKey("long")

@@ -15,6 +15,7 @@ import com.salem.amna.presentation.ui.auth.account_type.AccountTypeFragment
 import com.salem.amna.presentation.ui.auth.login.LoginFragment
 import com.salem.amna.util.replaceFragment
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.runBlocking
 import javax.inject.Inject
 
 @AndroidEntryPoint

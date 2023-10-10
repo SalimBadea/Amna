@@ -48,6 +48,9 @@ class NotificationsFragment : BaseFragment() {
     }
 
     override fun onEvent() {
+        binding.backIv.setOnClickListener{
+            baseActivity.onBackPressed()
+        }
     }
 
     override fun render() {
